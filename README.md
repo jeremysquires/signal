@@ -6,16 +6,22 @@ The purpose of this project is to maximize the amount of signal we receive about
 
 We are looking for future team members to demonstrate their skill level.  Please review the evaluation criteria so you understand how we will be looking at this assignment.  We are expecting candidates to limit the time spent (and have limited time available) so we are not expecting all the boxes checked.  We look forward to discussing with you which boxes you prioritized and why.  
 
-- [ ] Good commits that show the progression
-- [ ] Simplicity and good design patterns and architectural principals
-- [ ] Proficiency with current versions of tools, frameworks, and languages
-- [ ] User stories accepted by PM
-- [ ] Easy for the reviewer to run or deploy
-- [ ] Test one component with an automated test
-- [ ] Apply one DevOps principal 
-- [ ] Demonstrate one Security best practice
-- [ ] Illustrates Git and Github best practices 
-- [ ] Solid readme 
+- [3] Good commits that show the progression
+- [1] Simplicity and good design patterns and architectural principles
+- [4] Proficiency with current versions of tools, frameworks, and languages
+- [1] User stories accepted by PM
+- [2] Easy for the reviewer to run or deploy
+- [2] Test one component with an automated test
+- [5] Apply one DevOps principle 
+- [5] Demonstrate one Security best practice
+- [4] Illustrates Git and Github best practices 
+- [3] Solid readme 
+
+* Highest priority to most impactful, hardest to change decisions.
+* Second priority to pragmatic operational aspects of coding.
+* Third priority to maintenance considerations.
+* Fourth priority to technology.
+* Lowest priority to adhering to high level guidelines.
 
 # Features
 
