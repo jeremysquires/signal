@@ -1,0 +1,3 @@
+# Declare files that will always have LF (UNIX) line endings on checkout.
+*.apib text eol=lf
+*.yml text eol=lf
