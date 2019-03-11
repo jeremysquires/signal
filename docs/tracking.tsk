@@ -2,6 +2,9 @@
 <?taskcoach release="1.4.3" tskversion="37"?>
 
 <tasks>
+<task actualstartdate="2019-03-11 16:10:40.913000" creationDateTime="2019-03-11 16:10:22.843000" id="7720fcae-444a-11e9-9186-60a44c6e2f97" modificationDateTime="2019-03-11 16:10:40.913000" status="1" subject="Front End">
+<effort id="81e64011-444a-11e9-9224-60a44c6e2f97" start="2019-03-11 16:10:40" status="1" />
+</task>
 <task creationDateTime="2019-03-04 10:20:40.581000" id="d59a0b51-3ea1-11e9-87f2-60a44c6e2f97" modificationDateTime="2019-03-04 10:21:00.947000" status="1" subject="Tests" />
 <task creationDateTime="2019-03-04 10:21:13.040000" id="e8f2e500-3ea1-11e9-b83e-60a44c6e2f97" modificationDateTime="2019-03-04 10:21:36.869000" status="1" subject="Infrastrucutre" />
 <task actualstartdate="2019-03-04 09:00:48" creationDateTime="2019-03-04 10:00:20.706000" id="fe7fe421-3e9e-11e9-8ed9-60a44c6e2f97" modificationDateTime="2019-03-11 10:38:42.669000" status="1" subject="Planning">

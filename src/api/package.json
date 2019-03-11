@@ -1,0 +1,19 @@
+{
+  "name": "dblayer",
+  "version": "1.0.0",
+  "description": "abstract access to data sources",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Jeremy Squires",
+  "license": "ISC",
+  "dependencies": {
+    "graphql": "^14.0.2",
+    "koa": "^2.6.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-graphql": "^0.7.5",
+    "koa-json-error": "^3.1.2",
+    "koa-router": "^7.4.0"
+  }
+}
