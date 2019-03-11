@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?taskcoach release="1.4.3" tskversion="37"?>
+
+<tasks>
+<task creationDateTime="2019-03-04 10:20:40.581000" id="d59a0b51-3ea1-11e9-87f2-60a44c6e2f97" modificationDateTime="2019-03-04 10:21:00.947000" status="1" subject="Tests" />
+<task creationDateTime="2019-03-04 10:21:13.040000" id="e8f2e500-3ea1-11e9-b83e-60a44c6e2f97" modificationDateTime="2019-03-04 10:21:36.869000" status="1" subject="Infrastrucutre" />
+<task actualstartdate="2019-03-04 09:00:48" creationDateTime="2019-03-04 10:00:20.706000" id="fe7fe421-3e9e-11e9-8ed9-60a44c6e2f97" modificationDateTime="2019-03-11 10:38:42.669000" status="1" subject="Planning">
+<effort id="0ef1072e-3e9f-11e9-9af7-60a44c6e2f97" start="2019-03-04 09:30:00" status="1" stop="2019-03-04 10:17:13" />
+<effort id="19d90d70-3ea2-11e9-8441-60a44c6e2f97" start="2019-03-04 10:22:35" status="1" stop="2019-03-04 10:37:14" />
+<effort id="21b369cf-441c-11e9-805d-60a44c6e2f97" start="2019-03-11 10:38:42" status="1" stop="2019-03-11 10:52:17" />
+</task>
+<syncmlconfig>
+<TaskCoach-0000016949a6062d63b23e7100c000a800010049>
+<spds>
+<sources>
+<TaskCoach-0000016949a6062d63b23e7100c000a800010049.Tasks />
+<TaskCoach-0000016949a6062d63b23e7100c000a800010049.Notes />
+</sources>
+<syncml>
+<Auth />
+<Conn />
+</syncml>
+</spds>
+</TaskCoach-0000016949a6062d63b23e7100c000a800010049>
+</syncmlconfig>
+<guid>
+0000016949a6062d63b23e7100c000a800010049
+</guid>
+</tasks>
