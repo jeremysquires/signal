@@ -2,8 +2,16 @@
 <?taskcoach release="1.4.3" tskversion="37"?>
 
 <tasks>
-<task actualstartdate="2019-03-11 16:10:40.913000" creationDateTime="2019-03-11 16:10:22.843000" id="7720fcae-444a-11e9-9186-60a44c6e2f97" modificationDateTime="2019-03-11 16:10:40.913000" status="1" subject="Front End">
-<effort id="81e64011-444a-11e9-9224-60a44c6e2f97" start="2019-03-11 16:10:40" status="1" />
+<task actualstartdate="2019-03-11 16:10:40.913000" creationDateTime="2019-03-11 16:10:22.843000" id="7720fcae-444a-11e9-9186-60a44c6e2f97" modificationDateTime="2019-03-14 15:38:35.313000" status="1" subject="Front End">
+<effort id="55631c11-4699-11e9-951e-60a44c6e2f97" start="2019-03-14 14:39:58" status="1" stop="2019-03-14 14:59:53" />
+<effort id="81e64011-444a-11e9-9224-60a44c6e2f97" start="2019-03-11 16:10:40" status="1" stop="2019-03-11 16:34:17" />
+<effort id="8564420f-46a1-11e9-97b7-60a44c6e2f97" start="2019-03-14 15:38:35" status="1" stop="2019-03-14 17:44:40" />
+<effort id="87864791-4508-11e9-ac6f-60a44c6e2f97" start="2019-03-12 14:50:54" status="1" stop="2019-03-12 15:20:59" />
+<effort id="8e757530-4693-11e9-9377-60a44c6e2f97" start="2019-03-14 13:58:37" status="1" stop="2019-03-14 14:05:08" />
+<effort id="9f02cf8f-44e2-11e9-96b5-60a44c6e2f97" start="2019-03-12 10:19:33" status="1" stop="2019-03-12 10:36:53" />
+<effort id="a0f74bc0-4512-11e9-841d-60a44c6e2f97" start="2019-03-12 15:30:00" status="1" stop="2019-03-12 16:03:27" />
+<effort id="b210e170-44de-11e9-8b94-60a44c6e2f97" start="2019-03-12 09:51:27" status="1" stop="2019-03-12 09:59:51" />
+<effort id="b79e3240-4502-11e9-b53b-60a44c6e2f97" start="2019-03-12 14:09:18" status="1" stop="2019-03-12 14:36:26" />
 </task>
 <task creationDateTime="2019-03-04 10:20:40.581000" id="d59a0b51-3ea1-11e9-87f2-60a44c6e2f97" modificationDateTime="2019-03-04 10:21:00.947000" status="1" subject="Tests" />
 <task creationDateTime="2019-03-04 10:21:13.040000" id="e8f2e500-3ea1-11e9-b83e-60a44c6e2f97" modificationDateTime="2019-03-04 10:21:36.869000" status="1" subject="Infrastrucutre" />
