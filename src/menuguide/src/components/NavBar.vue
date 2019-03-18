@@ -24,11 +24,19 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Palanquin+Dark");
 .appname {
   font-family: 'Palanquin Dark', sans-serif;
-  font-size: 12px;
+  font-size: 16px;
+  float: left;
+  margin-left: 10px;
 }
 .logo > img {
-  height: '5%';
-  width: '2%';
+  height: 5%;
+  width: 2%;
+  float: left;
+  margin-left: 10px;
+}
+.title {
+  font-family: 'Palanquin Dark', sans-serif;
+  font-size: 20px;
 }
 h3 {
   margin: 40px 0 0;
