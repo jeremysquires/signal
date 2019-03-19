@@ -1,0 +1,25 @@
+[
+  {
+    "login": "Admin",
+    "firstName": "Adam",
+    "lastName": "Ministrator",
+    "middleNameOrInitial": "",
+    "age": 19,
+    "weight": {
+      "value": 185,
+      "units": "lbs",
+      "dataSource": "scale/wiifit"
+    },
+    "height": {
+      "value": 5.83,
+      "units": "ft",
+      "dataSource": "tape/manual"
+    },
+    "bodyfat": {
+      "value": 20,
+      "units": "percent",
+      "dataSource": "calipers/manual"
+    },
+    "family": null
+  }
+]

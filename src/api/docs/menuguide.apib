@@ -1,0 +1,106 @@
+FORMAT: 1A
+
+# MenuGuide API
+This API returns menu guidance for individuals and families
+
+# API Root [/api/v1/]
+
+This resource does not have any attributes.
+It offers the initial API affordances.
+
+## Retrieve the Entry Point [GET]
+
++ Response 200 (application/json; charset=utf-8)
+
+  ```
+  {
+    "name": "menuguide-api",
+    "description": "REST API for the Signal MenuGuide",
+    "endpoints": [
+      "/api/v1/users",
+      "/api/v1/users/:login",
+      "/api/v1/menu/:login",
+      "/api/v1/"
+    ]
+  }
+  ```
+
+# Users List [/api/v1/users]
+
+Gets all user's information in an array.
+
+## Get users list [GET]
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (UserList)
+
+# Users by Login ID [/api/v1/users/{login}]
+
+Gets one user's information.
+
+## Get user by Id [GET]
+
++ Parameters
+    + login: `jsquires` (string, required)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (User)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (Error)
+
+        Bad Request (unavailable login)
+
+# Data Structures
+
+## Error (object)
+
+### Properties
++ err (string, required)
+
+## SensorData (object)
++ value: 185 (number, required)
++ units: 'lbs' (string, required)
++ dataSource: 'scale/wiifit' (string, required)
+
+## UserList (array[User])
+
+## User (object)
++ login (string, required)
++ firstName (string, required)
++ lastName (string, required)
++ middleNameOrInitial (string, optional)
++ age (number, required)
++ weight (SensorData, required)
++ height (SensorData, required)
++ bodyfat (SensorData, required)
++ family (array[User], required)
+
+    User is a JSON object indexed by login
+
+        ```
+        {
+          login: 'Admin',
+          firstName: 'Adam',
+          lastName: 'Ministrator',
+          middleNameOrInitial: '',
+          age: 19,
+          weight: {
+            value: 185,
+            units: 'lbs',
+            dataSource: 'scale/wiifit',
+          },
+          height: {
+            value: (5 + 10/12),
+            units: 'ft',
+            dataSource: 'tape/manual',
+          },
+          bodyfat: {
+            value: 20,
+            units: 'percent',
+            dataSource: 'calipers/manual',
+          },
+          family: null,
+        }
+        ```
+

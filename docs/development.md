@@ -4,7 +4,9 @@
 
 ### Quick Start
 
+#### Install NPM modules / scripts
 
+- `npm install -g dredd`
 
 ## Front End
 
