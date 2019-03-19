@@ -6,7 +6,45 @@
 
 #### Install NPM modules / scripts
 
-- `npm install -g dredd`
+> `npm install -g dredd`
+
+#### Run
+
+> `cd src/api`
+>
+> `node ./server.js`
+
+#### Test
+
+> `cd src/api`
+>
+> `npm run test`
+
+### Docs
+
+[API Blueprint](https://apiblueprint.org) is used to document the APIs
+
+In the docs folder you will find markdown files in the API blueprint format that can be processed by special purpose applications such as [Dredd](http://dredd.org), an API testing tool, and [Apiary](https://apiary.io/), a platform for hosting API documentation.
+
+### Dredd API Blueprint Tests
+
+#### Install
+
+> `npm install dredd -g`
+
+#### Run
+
+> Run the Dredd tests from the parent directory (/api), with:
+> 
+> `dredd --config docs/dredd_menuguide_local.yml`
+>
+> OR
+>
+> `npm run test:dredd`
+>
+> If the server has already been started, then run dredd this way:
+>
+> `dredd ./docs/menuguide.apib http://localhost:8282`
 
 ## Front End
 
@@ -14,15 +52,19 @@
 
 #### Install Vue Modules and Plugins
 
-- `npm install -g @vue/cli`
-- `npm install -g @vue/cli-service-global`
+> `npm install -g @vue/cli`
+>
+> `npm install -g @vue/cli-service-global`
 
 #### Build and Run
 
-- `cd menuguide`
-- `npm install`
-- `npm run serve`
-- Open in browser at the URL indicated by the serve command
+> `cd menuguide`
+>
+> `npm install`
+>
+> `npm run serve`
+>
+> Open in browser at the URL indicated by the serve command
 
 ### Future Implementation Ideas
 

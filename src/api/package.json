@@ -4,7 +4,9 @@
   "description": "menuguide data source api",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "serve": "node ./server.js",
+    "test": "jest && test:dredd",
+    "test:dredd": "dredd --config docs/dredd_menuguide_local.yml",
     "data:convert": "node data-convert.js"
   },
   "author": "Jeremy Squires",
