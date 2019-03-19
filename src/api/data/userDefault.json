@@ -20,6 +20,29 @@
       "units": "percent",
       "dataSource": "calipers/manual"
     },
-    "family": null
+    "family": []
+  },
+  {
+    "login": "Mom",
+    "firstName": "Martha",
+    "lastName": "Ministrator",
+    "middleNameOrInitial": "",
+    "age": 34,
+    "weight": {
+      "value": 115,
+      "units": "lbs",
+      "dataSource": "scale/wiifit"
+    },
+    "height": {
+      "value": 5.2,
+      "units": "ft",
+      "dataSource": "tape/manual"
+    },
+    "bodyfat": {
+      "value": 30,
+      "units": "percent",
+      "dataSource": "calipers/manual"
+    },
+    "family": []
   }
 ]

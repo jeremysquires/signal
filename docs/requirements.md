@@ -84,3 +84,8 @@ So that I can improve the health of my family
 - Health metrics
   - Fat % from caliper readings
   - Blood Pressure
+
+## Requirements Questions
+
+- Should family members all have individual logins, or will a family always have one owner that logs in?
+  - Decision: Design the user family structure to allow all users a separate login

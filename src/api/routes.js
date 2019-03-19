@@ -1,6 +1,7 @@
 const Router = require('koa-router');
 const fs = require('fs-extra');
 const path = require('path');
+const { find } = require('lodash');
 
 const { name, description, version } = require('./package.json');
 
@@ -26,8 +27,24 @@ router.get('/users', async (ctx) => {
   if (!userDefaultDataJSON) {
     ctx.throw(404, 'No default users found');
   }
-  // TODO: append user data from DB
+  // TODO: append user data from other source
   ctx.body = userDefaultDataJSON;
+});
+
+router.get('/users/:login', async (ctx) => {
+  const { login } = ctx.params;
+  await loadUserDefaultData();
+  if (!userDefaultDataJSON) {
+    ctx.throw(404, 'No default users found');
+  }
+  // TODO: append user data from other source
+  const user = find(userDefaultDataJSON, {
+    "login": login
+  });
+  if (!user) {
+    ctx.throw(404, `No user ${login} found`);
+  }
+  ctx.body = user;
 });
 
 // affordances

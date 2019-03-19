@@ -41,7 +41,7 @@ Gets one user's information.
 ## Get user by Id [GET]
 
 + Parameters
-    + login: `jsquires` (string, required)
+    + login: `Admin` (string, required)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes (User)
@@ -74,7 +74,7 @@ Gets one user's information.
 + weight (SensorData, required)
 + height (SensorData, required)
 + bodyfat (SensorData, required)
-+ family (array[User], required)
++ family (array[string], required)
 
     User is a JSON object indexed by login
 
@@ -100,7 +100,7 @@ Gets one user's information.
             units: 'percent',
             dataSource: 'calipers/manual',
           },
-          family: null,
+          family: [],
         }
         ```
 

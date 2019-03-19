@@ -18,7 +18,7 @@ beforeAll(async () => {
 });
 
 describe('/api/v1/users', () => {
-  it('returns an array of users objects containins Admin as the first user', async () => {
+  it('returns an array of users objects containing Admin as the first user', async () => {
     const request = await server.get('/api/v1/users');
     expect(request.status).toEqual(200);
     expect(request.body.length).toBeDefined();
