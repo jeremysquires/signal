@@ -82,7 +82,7 @@ So that I can improve the health of my family
   - Height
   - Gender
 - Health metrics
-  - Fat % from caliper readings
+  - Body Fat %
   - Blood Pressure
 
 ## Requirements Questions

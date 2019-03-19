@@ -59,11 +59,21 @@ Gets one user's information.
 + err (string, required)
 
 ## SensorData (object)
-+ value: 185 (number, required)
+
+    TODO: make units and data sources enums
+
++ value: '185' (string, required)
 + units: 'lbs' (string, required)
 + dataSource: 'scale/wiifit' (string, required)
 
 ## UserList (array[User])
+
+## Gender (enum[string])
++ 'm' - male
++ 'f' - female
++ 'n' - non-binary
+
+### Default: 'n'
 
 ## User (object)
 + login (string, required)
@@ -73,7 +83,9 @@ Gets one user's information.
 + age (number, required)
 + weight (SensorData, required)
 + height (SensorData, required)
-+ bodyfat (SensorData, required)
++ gender (Gender, required)
++ bloodPressure (SensorData, required)
++ bodyFat (SensorData, required)
 + family (array[string], required)
 
     User is a JSON object indexed by login
@@ -86,21 +98,26 @@ Gets one user's information.
           middleNameOrInitial: '',
           age: 19,
           weight: {
-            value: 185,
+            value: '185',
             units: 'lbs',
             dataSource: 'scale/wiifit',
           },
           height: {
-            value: (5 + 10/12),
+            value: '5.83',
             units: 'ft',
             dataSource: 'tape/manual',
           },
-          bodyfat: {
-            value: 20,
+          gender: 'm',
+          bloodPressure: {
+            value: '120/70/65',
+            units: 'mmHg/mmHg/bpm',
+            dataSource: 'bp cuff',
+          },
+          bodyFat: {
+            value: '20',
             units: 'percent',
             dataSource: 'calipers/manual',
           },
           family: [],
         }
         ```
-

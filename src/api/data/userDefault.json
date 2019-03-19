@@ -6,17 +6,23 @@
     "middleNameOrInitial": "",
     "age": 19,
     "weight": {
-      "value": 185,
+      "value": "185",
       "units": "lbs",
       "dataSource": "scale/wiifit"
     },
     "height": {
-      "value": 5.83,
+      "value": "5.83",
       "units": "ft",
       "dataSource": "tape/manual"
     },
-    "bodyfat": {
-      "value": 20,
+    "gender": "m",
+    "bloodPressure": {
+      "value": "120/70/65",
+      "units": "mmHg/mmHg/bpm",
+      "dataSource": "bp cuff"
+    },
+    "bodyFat": {
+      "value": "20",
       "units": "percent",
       "dataSource": "calipers/manual"
     },
@@ -29,17 +35,23 @@
     "middleNameOrInitial": "",
     "age": 34,
     "weight": {
-      "value": 115,
+      "value": "115",
       "units": "lbs",
       "dataSource": "scale/wiifit"
     },
     "height": {
-      "value": 5.2,
+      "value": "5.2",
       "units": "ft",
       "dataSource": "tape/manual"
     },
-    "bodyfat": {
-      "value": 30,
+    "gender": "f",
+    "bloodPressure": {
+      "value": "150/85/55",
+      "units": "mmHg/mmHg/bpm",
+      "dataSource": "bp cuff"
+    },
+    "bodyFat": {
+      "value": "30",
       "units": "percent",
       "dataSource": "calipers/manual"
     },
