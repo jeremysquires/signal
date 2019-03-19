@@ -28,18 +28,40 @@ Reasons for prioritization:
 - Fourth priority to technology
 - Lowest priority to showing specific area capabilities
 
-
 ## Technology
 
-- API: Node/Koa
-    - My most familiar API framework (other than Java)
-    - Koa is built by the Express team
-    - Small, expandable, and utilizes latest tech (ES6/async)
+- API: Node/Koa, API Blueprint, Jest and Dredd
+    - Koa on Node is my most familiar API framework (other than Java)
+    - Koa is:
+        - built by the Express team to fill in the gaps in that minimal framework
+        - small, expandable, and utilizes modern Javascript natively (ES6/async)
+    - API Blueprint is:
+        - smaller and less complicated than swagger (the #1 API documentation system)
+        - fully supports JSON Schema (the swagger schema), as well as MSON (the APIB schema)
+        - can be transformed into swagger automatically if necessary
+        - fully supported by Dredd and Apiary (the most popular API test tool and doc platform)
+    - Jest is a unit test framework that:
+        - mocks all dependencies by default, requiring less work to set up
+        - supports expect and most other standard test assertion types
+        - widely adopted through its tight integration with React
+        - plugins are available for Koa and Vue
+    - Dredd:
+        - supports a Test Driven Development (TDD) workflow
+        - API documentation can be generated from the tests
+        - plugins for CircleCI and Apiary are available
 
-- Front End: Vue
-    - My most familiar Web framework
-    - The least heavy of the top 3 frameworks (Angular, React, Vue)
-    - Use vue-cli to generate a reactive web app quickly
+- Front End: Vue, Axios, Jest, and Cypress
+    - Vue is:
+        - my most familiar Web framework
+        - the smallest of the top 3 frameworks (Angular, React, Vue)
+    - Vue-cli is a set of command line tools:
+        - to generate a reactive web app quickly
+    - Vue-cli service is a plugin for vue-cli:
+        - that automates the serve and watch debug cycle
+    - Jest is a unit test framework (see the API section for rationale)
+    - Cypress is an end to end testing tool
+        - provides more control to the programmer than Selenium
+        - is programmed through an expresssive API
 
 ## Data
 
@@ -49,7 +71,7 @@ Open data from the [Canada Food Guide](https://open.canada.ca/data/en/dataset/e5
 
 This data is in WinLatin1 (CP1252) rather than UTF8 (1/2 symbols) and should be converted to conform to an all-UTF8 policy.
 
-- https://www.npmjs.com/package/to-utf-8
+- Use [to-utf-8](https://www.npmjs.com/package/to-utf-8) to convert the data
 
 I would convert this on the fly in the API if the data were frequently updated, but since it is updated infrequently, we will do a one time conversion instead.
 
@@ -59,7 +81,7 @@ A user interface is not required but is considered optional for candidates who w
 
 I decided to implement a basic UI using the framework I am most familiar with (Vue).
 
-This UI is very rudimentary, but provides a means of testing the API in an integration setting, rather than just using Postman or equivalent.
+This UI is very rudimentary, but provides a means of testing the API in an integration setting, rather than just using Dredd, Postman or equivalent.
 
 ## Submissions
 
