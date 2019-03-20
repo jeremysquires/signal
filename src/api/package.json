@@ -14,12 +14,11 @@
   "repository": "https://github.com/jeremysquires/signal",
   "dependencies": {
     "axios": "^0.18.0",
+    "csvtojson": "^2.0.8",
     "fs-extra": "^7.0.1",
-    "graphql": "^14.0.2",
     "jest": "^24.5.0",
     "koa": "^2.6.1",
     "koa-bodyparser": "^4.2.1",
-    "koa-graphql": "^0.7.5",
     "koa-json-error": "^3.1.2",
     "koa-router": "^7.4.0",
     "lodash": "^4.17.11",

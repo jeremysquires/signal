@@ -51,6 +51,23 @@ Gets one user's information.
 
         Bad Request (unavailable login)
 
+# Menu by Login ID [/api/v1/menu/{login}]
+
+Gets one user's daily menu.
+
+## Get menu by Id [GET]
+
++ Parameters
+    + login: `Admin` (string, required)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (Menu)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (Error)
+
+        Bad Request (unavailable login)
+
 # Data Structures
 
 ## Error (object)
@@ -121,3 +138,12 @@ Gets one user's information.
           family: [],
         }
         ```
+
+## Servings (object)
++ foodGroup (string, required)
++ servings (string, required)
+
+## Menu (object)
++ login (string, required)
++ servingsPerFoodGroup (array[Servings], required)
+

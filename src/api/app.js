@@ -1,5 +1,4 @@
 const Koa = require('koa');
-const Router = require('koa-router');
 const error = require('koa-json-error');
 const bodyParser = require('koa-bodyparser');
 
@@ -17,5 +16,8 @@ app.use(error(err => ({
 app.use(bodyParser());
 
 app.use(router.routes()).use(router.allowedMethods());
+
+// track the base router prefix through the app.context => ctx
+app.context.prefix = router.opts.prefix;
 
 module.exports = app;
