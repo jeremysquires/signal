@@ -1,17 +1,9 @@
 const toutf8 = require('to-utf-8');
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
+const { dataFiles, rawDataPath, utf8DataPath } = require('./canadaFoodGuide');
 
-const files = [
-  'foods-en_ONPP_rev.csv',
-  'fg_directional_satements-en_ONPP.csv',
-  'foodgroups-en_ONPP.csv',
-  'servings_per_day-en_ONPP.csv'
-];
-const rawDataPath = '../../data';
-const utf8DataPath = '../../data/utf8';
-
-files.forEach((file) => {
+dataFiles.forEach((file) => {
   const source = path.join(rawDataPath, file);
   const target = path.join(utf8DataPath, file);
   if (fs.existsSync(source)) {

@@ -7,12 +7,13 @@
     "serve": "node ./server.js",
     "test": "jest && npm run test:dredd",
     "test:dredd": "dredd --config docs/dredd_menuguide_local.yml",
-    "data:convert": "node data-convert.js"
+    "data:convert": "node ./data/data-convert.js"
   },
   "author": "Jeremy Squires",
   "license": "ISC",
   "repository": "https://github.com/jeremysquires/signal",
   "dependencies": {
+    "axios": "^0.18.0",
     "fs-extra": "^7.0.1",
     "graphql": "^14.0.2",
     "jest": "^24.5.0",
