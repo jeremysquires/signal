@@ -46,6 +46,24 @@ In the docs folder you will find markdown files in the API blueprint format that
 >
 > `dredd ./docs/menuguide.apib http://localhost:8282`
 
+### Future Implementation Ideas
+
+#### Scalability
+
+- Refactor users and menu endpoints as decoupled microservices
+    - put endpoints into separate route files - DONE
+    - remove dependencies on locals, move to API endpoint calls
+    - allow endpoints to be configured separately during deployment
+
+#### DevOps
+
+- Implement deploy task to surge.sh or other static hosting provider
+- Incorporate CircleCI into development process through GitHub
+
+#### Security
+
+- Implement HTTPS routes
+
 ## Front End
 
 ### Quick Start

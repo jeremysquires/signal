@@ -56,10 +56,12 @@ Reasons for prioritization:
         - the smallest of the top 3 frameworks (Angular, React, Vue)
     - Vue-cli is a set of command line tools:
         - to generate a reactive web app quickly
-    - Vue-cli service is a plugin for vue-cli:
-        - that automates the serve and watch debug cycle
+    - Vue-cli service is a plugin for vue-cli that:
+        - automates the serve, watch and debug cycle
+        - builds static single page application sites to dist (using webpack)
+    - Axios is a high level abstraction on top of Ajax with modern syntax
     - Jest is a unit test framework (see the API section for rationale)
-    - Cypress is an end to end testing tool
+    - Cypress is an end to end testing tool (TODO)
         - provides more control to the programmer than Selenium
         - is programmed through an expresssive API
 
@@ -74,6 +76,11 @@ This data is in WinLatin1 (CP1252) rather than UTF8 (1/2 symbols) and should be 
 - Use [to-utf-8](https://www.npmjs.com/package/to-utf-8) to convert the data
 
 I would convert this on the fly in the API if the data were frequently updated, but since it is updated infrequently, we will do a one time conversion instead.
+
+### Restructuring as JSON
+
+Although the incoming data is organized as relational tables in CSV, we don't want to write SQL to access it.
+An import of the data to JSON will be performed.
 
 ## Interface
 
