@@ -48,8 +48,9 @@ const loadCanadaFoodGuideData = async (convert = false, reload = false) => {
       });
   });
   const allFiles = await Promise.all(dataPromises);
+  const afterDashRe = /-.+$/;
   allFiles.forEach((file) => {
-    result[file.fileName] = file.contents;
+    result[file.fileName.replace(afterDashRe, '')] = file.contents;
   });
   canadaFoodGuideData = result;
   // save the results of conversion for next server start
@@ -62,8 +63,9 @@ const loadCanadaFoodGuideData = async (convert = false, reload = false) => {
 };
 
 router.get('/', async (ctx) => {
+  const { convert, reload } = ctx.query;
   const baseurl = `${ctx.protocol}://${ctx.request.header.host}${ctx.prefix}`;
-  await loadCanadaFoodGuideData();
+  await loadCanadaFoodGuideData(convert, reload);
   const userDataJSON = await loadUserData(baseurl);
   if (!userDataJSON) {
     ctx.throw(404, 'No users found');
@@ -78,8 +80,9 @@ router.get('/', async (ctx) => {
 
 router.get('/:login', async (ctx) => {
   const { login } = ctx.params;
+  const { convert, reload } = ctx.query;
   const baseurl = `${ctx.protocol}://${ctx.request.header.host}${ctx.prefix}`;
-  await loadCanadaFoodGuideData();
+  await loadCanadaFoodGuideData(convert, reload);
   const userDataJSON = await loadUserData(baseurl, login);
   if (!userDataJSON) {
     ctx.throw(404, `No user ${login} found`);
