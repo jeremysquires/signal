@@ -29,6 +29,9 @@ router.get('/', async (ctx) => {
 
 router.get('/:login', async (ctx) => {
   const { login } = ctx.params;
+  // TODO: verify login against authentication server
+  // store login in ctx state for downstream use
+  ctx.state.login = login;
   await loadUserDefaultData();
   if (!userDefaultDataJSON) {
     ctx.throw(404, 'No default users found');
