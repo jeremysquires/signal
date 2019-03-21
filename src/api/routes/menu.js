@@ -1,6 +1,5 @@
 const Router = require('koa-router');
 const axios = require('axios');
-const { find } = require('lodash');
 const fs = require('fs-extra');
 const path = require('path');
 const csvtojson = require('csvtojson');
@@ -22,7 +21,7 @@ const loadUserData = async (baseurl, login) => {
       response = await axios.get(`${baseurl}/users`);
     }
   } catch (error) {
-    console.error(error);
+    console.error(error); // eslint-disable-line no-console
     return;
   }
   return response.data;
@@ -40,7 +39,7 @@ const loadCanadaFoodGuideData = async (convert = false, reload = false) => {
     canadaFoodGuideData = await fs.readJson(jsonFilePath);
     return canadaFoodGuideData;
   }
-  console.log('Fetching and converting Canada food quide data.');
+  console.log('Fetching and converting Canada food quide data.'); // eslint-disable-line no-console
   // load the data files in parallel (could be large)
   // TODO: load latest from web site
   const dataPromises = dataFiles.map((fileName) => {
@@ -65,7 +64,7 @@ const loadCanadaFoodGuideData = async (convert = false, reload = false) => {
   try {
     await fs.writeJson(jsonFilePath, result);
   } catch (err) {
-    console.error(err)
+    console.error(err);  // eslint-disable-line no-console
   }  
   return result;
 };

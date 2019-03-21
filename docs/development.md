@@ -70,6 +70,10 @@ In the docs folder you will find markdown files in the API blueprint format that
     - JWT Tokens to maintain Authentication and secure it
     - Opaque tokens in DB for Authorization
 
+#### Code Quality
+
+- [stricter eslint config](https://www.npmjs.com/package/eslint-config-node)
+
 ## Front End
 
 ### Quick Start

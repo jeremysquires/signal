@@ -1,7 +1,6 @@
 const Router = require('koa-router');
 const fs = require('fs-extra');
 const path = require('path');
-const { find } = require('lodash');
 const jmespath = require('jmespath');
 
 const router = new Router();
