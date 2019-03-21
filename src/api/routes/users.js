@@ -49,7 +49,7 @@ router.get('/:login', async (ctx) => {
     ctx.throw(404, 'No default users found');
   }
   await loadUserData();
-  const user = jmespath.search(userDefaultDataJSON, `[?login=='${login}'] | [0]`);
+  const user = jmespath.search(userDataJSON, `[?login=='${login}'] | [0]`);
   if (!user) {
     ctx.throw(404, `No user ${login} found`);
   }
