@@ -88,10 +88,9 @@ router.get('/', async (ctx) => {
   ctx.body = user;
 });
 
-// TODO: add ?family to return a single record with a whole family of data
 router.get('/:login', async (ctx) => {
   const { login } = ctx.params;
-  const { convert, reload } = ctx.query;
+  const { convert, reload, family } = ctx.query;
   const baseurl = `${ctx.protocol}://${ctx.request.header.host}${ctx.prefix}`;
   await loadCanadaFoodGuideData(paramTruth(convert), paramTruth(reload));
   const user = await loadUserData(baseurl, login);
@@ -107,6 +106,7 @@ router.get('/:login', async (ctx) => {
     jmespath.search(canadaFoodGuideData, `foodgroups[*].{fgid: fgid, foodgroup: foodgroup}`),
     JSON.stringify
   );
+  // some SQL-like things can be done with JSON that is organized the right way
   const joined = innerJoin(servingsPerDay, foodGroups, "fgid", "fgid");
   const result = {
     login,
@@ -117,6 +117,10 @@ router.get('/:login', async (ctx) => {
       }
     })
   };
+  if (paramTruth(family)) {
+    ctx.body = [ result ];
+    return;
+  }
   ctx.body = result;
 });
 

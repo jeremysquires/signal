@@ -68,6 +68,24 @@ Gets one user's daily menu.
 
         Bad Request (unavailable login)
 
+# Family Menus by Login ID [/api/v1/menu/{login}{?family}]
+
+Gets a family's daily menu.
+
+## Get family menus by Id [GET]
+
++ Parameters
+    + login: `Mom` (string, required)
+    + family: `true` (string, required)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (array[Menu])
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (Error)
+
+        Bad Request (unavailable login)
+
 # Data Structures
 
 ## Error (object)
