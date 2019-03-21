@@ -26,7 +26,7 @@
       "units": "percent",
       "dataSource": "calipers/manual"
     },
-    "family": []
+    "family": [ "Mom" ]
   },
   {
     "login": "Mom",
@@ -55,6 +55,6 @@
       "units": "percent",
       "dataSource": "calipers/manual"
     },
-    "family": []
+    "family": [ "Admin" ]
   }
 ]
