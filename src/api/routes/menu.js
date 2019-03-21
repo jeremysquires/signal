@@ -71,6 +71,30 @@ const loadCanadaFoodGuideData = async (convert = false, reload = false) => {
   return result;
 };
 
+const getMenu = (user) => {
+  const mappedGender = genderMap[user.gender];
+  const ageRange = getAgeRange(user.age);
+  const servingsPerDay = jmespath
+    .search(canadaFoodGuideData,
+    `servings_per_day[?gender=='${mappedGender}' && ages=='${ageRange}']`);
+  const foodGroups = uniqBy(
+    jmespath.search(canadaFoodGuideData, `foodgroups[*].{fgid: fgid, foodgroup: foodgroup}`),
+    JSON.stringify
+  );
+  // replace fgid with food group name using SQL like join
+  const joined = innerJoin(servingsPerDay, foodGroups, "fgid", "fgid");
+  const result = {
+    login: user.login,
+    servingsPerFoodGroup: joined.map((obj) => {
+      return {
+        foodgroup: obj.foodgroup,
+        servings: obj.servings
+      }
+    })
+  };
+  return result;
+};
+
 // return a menu for a "default" or average user
 router.get('/', async (ctx) => {
   const { convert, reload } = ctx.query;
@@ -97,29 +121,17 @@ router.get('/:login', async (ctx) => {
   if (!user) {
     ctx.throw(404, `No user ${login} found`);
   }
-  const mappedGender = genderMap[user.gender];
-  const ageRange = getAgeRange(user.age);
-  const servingsPerDay = jmespath.search(canadaFoodGuideData,
-    `servings_per_day[?gender=='${mappedGender}' && ages=='${ageRange}']`);
-  // TODO: replace fgid with food group name
-  const foodGroups = uniqBy(
-    jmespath.search(canadaFoodGuideData, `foodgroups[*].{fgid: fgid, foodgroup: foodgroup}`),
-    JSON.stringify
-  );
-  // some SQL-like things can be done with JSON that is organized the right way
-  const joined = innerJoin(servingsPerDay, foodGroups, "fgid", "fgid");
-  const result = {
-    login,
-    servingsPerFoodGroup: joined.map((obj) => {
-      return {
-        foodgroup: obj.foodgroup,
-        servings: obj.servings
-      }
-    })
-  };
+  let result = getMenu(user);
   if (paramTruth(family)) {
-    ctx.body = [ result ];
-    return;
+    // returns array of menus
+    result = [ result ];
+    const dataPromises = user.family.map(async (memberLogin) => {
+      const familyMember = await loadUserData(baseurl, memberLogin);
+      return getMenu(familyMember);
+    });
+    // reap the data
+    const familyMenus = await Promise.all(dataPromises);
+    result.push(...familyMenus);
   }
   ctx.body = result;
 });
