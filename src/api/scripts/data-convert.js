@@ -1,7 +1,7 @@
 const toutf8 = require('to-utf-8');
 const fs = require('fs-extra');
 const path = require('path');
-const { dataFiles, rawDataPath, utf8DataPath } = require('./canadaFoodGuide');
+const { dataFiles, rawDataPath, utf8DataPath } = require('../helpers/canadaFoodGuide');
 
 dataFiles.forEach((file) => {
   const source = path.join(rawDataPath, file);
