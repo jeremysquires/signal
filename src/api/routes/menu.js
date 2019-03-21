@@ -4,8 +4,9 @@ const { find } = require('lodash');
 const fs = require('fs-extra');
 const path = require('path');
 const csvtojson = require('csvtojson');
-const { dataFiles, utf8DataPath, genderMap, getAgeRange } = require('../helpers/canadaFoodGuide');
 const jmespath = require('jmespath');
+const { dataFiles, utf8DataPath, genderMap, getAgeRange } = require('../helpers/canadaFoodGuide');
+const { paramTruth } = require('../helpers/utils');
 
 const router = new Router();
 
@@ -35,11 +36,13 @@ const loadCanadaFoodGuideData = async (convert = false, reload = false) => {
   // if previously converted, return it
   const jsonFilePath = path.join(utf8DataPath, 'canadaFoodGuide.json');
   if (fs.existsSync(jsonFilePath) && !convert) {
+    // TODO: add try catch here
     canadaFoodGuideData = await fs.readJson(jsonFilePath);
     return canadaFoodGuideData;
   }
   console.log('Fetching and converting Canada food quide data.');
-  const result = {};
+  // load the data files in parallel (could be large)
+  // TODO: load latest from web site
   const dataPromises = dataFiles.map((fileName) => {
     const csvFilePath = path.join(utf8DataPath, fileName);
     return csvtojson()
@@ -48,8 +51,12 @@ const loadCanadaFoodGuideData = async (convert = false, reload = false) => {
         return { fileName, contents: fileJSON };
       });
   });
+  // reap the data
   const allFiles = await Promise.all(dataPromises);
+  // shorten the JSON structure indexes
+  // TODO: get the lang attribute from the filename for L10N (example: en)
   const afterDashRe = /-.+$/;
+  const result = {};
   allFiles.forEach((file) => {
     result[file.fileName.replace(afterDashRe, '')] = file.contents;
   });
@@ -63,28 +70,29 @@ const loadCanadaFoodGuideData = async (convert = false, reload = false) => {
   return result;
 };
 
+// return a menu for a "default" or average user
 router.get('/', async (ctx) => {
   const { convert, reload } = ctx.query;
   const baseurl = `${ctx.protocol}://${ctx.request.header.host}${ctx.prefix}`;
-  await loadCanadaFoodGuideData(convert, reload);
+  await loadCanadaFoodGuideData(paramTruth(convert), paramTruth(reload));
   const userDataJSON = await loadUserData(baseurl);
   if (!userDataJSON) {
     ctx.throw(404, 'No users found');
   }
-  // TODO: add a "default" or average user?
-  // OR return a menu for all users, or a random user?
-  const user = jmespath.search(userDataJSON, `[?login=='Admin'] | [0]`);
+  const defaultLogin = 'Admin';
+  const user = jmespath.search(userDataJSON, `[?login=='${defaultLogin}'] | [0]`);
   if (!user) {
     ctx.throw(404, 'No default user found');
   }
   ctx.body = user;
 });
 
+// TODO: add ?family
 router.get('/:login', async (ctx) => {
   const { login } = ctx.params;
   const { convert, reload } = ctx.query;
   const baseurl = `${ctx.protocol}://${ctx.request.header.host}${ctx.prefix}`;
-  await loadCanadaFoodGuideData(convert, reload);
+  await loadCanadaFoodGuideData(paramTruth(convert), paramTruth(reload));
   const user = await loadUserData(baseurl, login);
   if (!user) {
     ctx.throw(404, `No user ${login} found`);
