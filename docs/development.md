@@ -48,21 +48,27 @@ In the docs folder you will find markdown files in the API blueprint format that
 
 ### Future Implementation Ideas
 
-#### Scalability
+#### Scalability and Performance
 
 - Refactor users and menu endpoints as decoupled microservices
     - put endpoints into separate route files - DONE
     - remove dependencies on locals, move to API endpoint calls
     - allow endpoints to be configured separately during deployment
+- Add state management library so API calls are not necessary where endpoints cohabit a server
 
 #### DevOps
 
+- Add logging middleware (centralized to support microservices)
 - Implement deploy task to surge.sh or other static hosting provider
 - Incorporate CircleCI into development process through GitHub
 
 #### Security
 
-- Implement HTTPS routes
+- Implement HTTPS
+- Use a reverse proxy in a DMZ
+- Add authentication/authorization
+    - JWT Tokens to maintain Authentication and secure it
+    - Opaque tokens in DB for Authorization
 
 ## Front End
 

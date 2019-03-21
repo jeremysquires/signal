@@ -79,8 +79,9 @@ I would convert this on the fly in the API if the data were frequently updated, 
 
 ### Restructuring as JSON
 
-Although the incoming data is organized as relational tables in CSV, we don't want to write SQL to access it.
-An import of the data to JSON will be performed.
+Although the incoming data is organized as relational tables in CSV, the only requirement is for multiple readers of the data and no writers, and for infrequent updates of the data. It is therefore easier and faster to transform the data to JSON and access it that way from within our javascript.
+
+We could use SQL to join and transform the data into JSON, but there are already many good tools for converting CSV to JSON, so using a relational DB for this one time conversion would be overkill.
 
 ## Interface
 
