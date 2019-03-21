@@ -4,7 +4,8 @@ const { find } = require('lodash');
 const fs = require('fs-extra');
 const path = require('path');
 const csvtojson = require('csvtojson');
-const { dataFiles, utf8DataPath } = require('../data/canadaFoodGuide');
+const { dataFiles, utf8DataPath, genderMap, getAgeRange } = require('../helpers/canadaFoodGuide');
+const jmespath = require('jmespath');
 
 const router = new Router();
 
@@ -72,9 +73,10 @@ router.get('/', async (ctx) => {
   }
   // TODO: add a "default" or average user?
   // OR return a menu for all users, or a random user?
-  const user = find(userDataJSON, {
-    "login": "Admin"
-  });
+  const user = jmespath.search(userDataJSON, `[?login=='Admin'] | [0]`);
+  if (!user) {
+    ctx.throw(404, 'No default user found');
+  }
   ctx.body = user;
 });
 
@@ -83,17 +85,16 @@ router.get('/:login', async (ctx) => {
   const { convert, reload } = ctx.query;
   const baseurl = `${ctx.protocol}://${ctx.request.header.host}${ctx.prefix}`;
   await loadCanadaFoodGuideData(convert, reload);
-  const userDataJSON = await loadUserData(baseurl, login);
-  if (!userDataJSON) {
-    ctx.throw(404, `No user ${login} found`);
-  }
-  const user = find(userDataJSON, {
-    "login": login
-  });
+  const user = await loadUserData(baseurl, login);
   if (!user) {
     ctx.throw(404, `No user ${login} found`);
   }
-  ctx.body = user;
+  const mappedGender = genderMap[user.gender];
+  const ageRange = getAgeRange(user.age);
+  const servingsPerDay = jmespath.search(canadaFoodGuideData,
+    `servings_per_day[?gender=='${mappedGender}' && ages=='${ageRange}']`);
+  // TODO: replace fgid with food group name
+  ctx.body = servingsPerDay;
 });
 
 module.exports = router;

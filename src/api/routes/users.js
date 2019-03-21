@@ -2,12 +2,14 @@ const Router = require('koa-router');
 const fs = require('fs-extra');
 const path = require('path');
 const { find } = require('lodash');
+const jmespath = require('jmespath');
 
 const router = new Router();
 
 const userDefaultFile = path.resolve('./data/userDefault.json');
 // cache users test data, undefined, not {}, as it controls data loading
 let userDefaultDataJSON;
+let userDataJSON;
 
 const loadUserDefaultData = async (reload = false) => {
   // only load if not loaded or reload called, otherwise return existing JSON
@@ -18,13 +20,23 @@ const loadUserDefaultData = async (reload = false) => {
   return userDefaultDataJSON;
 };
 
+const loadUserData = async (reload = false) => {
+  // only load if not loaded or reload called, otherwise return existing JSON
+  if (userDataJSON && !reload) {
+    return userDataJSON;
+  }
+  // TODO: append user data from other source
+  userDataJSON = userDefaultDataJSON;
+  return userDataJSON;
+};
+
 router.get('/', async (ctx) => {
   await loadUserDefaultData();
   if (!userDefaultDataJSON) {
     ctx.throw(404, 'No default users found');
   }
-  // TODO: append user data from other source
-  ctx.body = userDefaultDataJSON;
+  await loadUserData();
+  ctx.body = userDataJSON;
 });
 
 router.get('/:login', async (ctx) => {
@@ -36,10 +48,8 @@ router.get('/:login', async (ctx) => {
   if (!userDefaultDataJSON) {
     ctx.throw(404, 'No default users found');
   }
-  // TODO: append user data from other source
-  const user = find(userDefaultDataJSON, {
-    "login": login
-  });
+  await loadUserData();
+  const user = jmespath.search(userDefaultDataJSON, `[?login=='${login}'] | [0]`);
   if (!user) {
     ctx.throw(404, `No user ${login} found`);
   }
