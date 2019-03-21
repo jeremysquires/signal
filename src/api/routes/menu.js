@@ -4,6 +4,8 @@ const fs = require('fs-extra');
 const path = require('path');
 const csvtojson = require('csvtojson');
 const jmespath = require('jmespath');
+const { uniqBy } = require('lodash');
+const { innerJoin } = require("json-function");
 const { dataFiles, utf8DataPath, genderMap, getAgeRange } = require('../helpers/canadaFoodGuide');
 const { paramTruth } = require('../helpers/utils');
 
@@ -86,7 +88,7 @@ router.get('/', async (ctx) => {
   ctx.body = user;
 });
 
-// TODO: add ?family
+// TODO: add ?family to return a single record with a whole family of data
 router.get('/:login', async (ctx) => {
   const { login } = ctx.params;
   const { convert, reload } = ctx.query;
@@ -101,7 +103,21 @@ router.get('/:login', async (ctx) => {
   const servingsPerDay = jmespath.search(canadaFoodGuideData,
     `servings_per_day[?gender=='${mappedGender}' && ages=='${ageRange}']`);
   // TODO: replace fgid with food group name
-  ctx.body = servingsPerDay;
+  const foodGroups = uniqBy(
+    jmespath.search(canadaFoodGuideData, `foodgroups[*].{fgid: fgid, foodgroup: foodgroup}`),
+    JSON.stringify
+  );
+  const joined = innerJoin(servingsPerDay, foodGroups, "fgid", "fgid");
+  const result = {
+    login,
+    servingsPerFoodGroup: joined.map((obj) => {
+      return {
+        foodgroup: obj.foodgroup,
+        servings: obj.servings
+      }
+    })
+  };
+  ctx.body = result;
 });
 
 module.exports = router;

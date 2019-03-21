@@ -4,7 +4,7 @@
   "description": "menuguide data source api",
   "engines": {
     "node": ">=8.5.0"
-  },  
+  },
   "main": "index.js",
   "scripts": {
     "serve": "node ./server.js",
@@ -21,6 +21,7 @@
     "csvtojson": "^2.0.8",
     "fs-extra": "^7.0.1",
     "jmespath": "^0.15.0",
+    "json-function": "^1.8.1",
     "koa": "^2.6.1",
     "koa-bodyparser": "^4.2.1",
     "koa-json-error": "^3.1.2",
