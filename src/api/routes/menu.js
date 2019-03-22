@@ -119,7 +119,8 @@ router.get('/', async (ctx) => {
   if (!user) {
     ctx.throw(404, 'No default user found');
   }
-  ctx.body = user;
+  const result = getMenu(user);
+  ctx.body = result;
 });
 
 router.get('/:login', async (ctx) => {
