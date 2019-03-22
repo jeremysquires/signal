@@ -71,6 +71,15 @@ const loadCanadaFoodGuideData = async (convert = false, reload = false) => {
   return result;
 };
 
+const maxServings = (servingRange) => {
+  const servingRe = /to (\d+)/i;
+  const found = servingRange.match(servingRe);
+  if (found && found.length > 1) {
+    return parseInt(found[1], 10);
+  }
+  return parseInt(servingRange);
+};
+
 const getMenu = (user) => {
   const mappedGender = genderMap[user.gender];
   const ageRange = getAgeRange(user.age);
@@ -88,7 +97,8 @@ const getMenu = (user) => {
     servingsPerFoodGroup: joined.map((obj) => {
       return {
         foodgroup: obj.foodgroup,
-        servings: obj.servings
+        servings: obj.servings,
+        maxServings: maxServings(obj.servings)
       }
     })
   };
