@@ -81,23 +81,49 @@ const maxServings = (servingRange) => {
 };
 
 const getMenu = (user) => {
+  // extract servings relevant to user's age and gender
   const mappedGender = genderMap[user.gender];
   const ageRange = getAgeRange(user.age);
   const servingsPerDay = jmespath
     .search(canadaFoodGuideData,
     `servings_per_day[?gender=='${mappedGender}' && ages=='${ageRange}']`);
+
+  // add food group name using SQL like join on fgid
   const foodGroups = uniqBy(
     jmespath.search(canadaFoodGuideData, `foodgroups[*].{fgid: fgid, foodgroup: foodgroup}`),
     JSON.stringify
   );
-  // replace fgid with food group name using SQL like join
-  const joined = innerJoin(servingsPerDay, foodGroups, "fgid", "fgid");
+  const servingsJoined = innerJoin(servingsPerDay, foodGroups, "fgid", "fgid");
+
+  // add directional statements per food group
+  // change directional-statement keyname to allow jmespath to address a query
+  const statementsCleaned = canadaFoodGuideData.fg_directional_satements.map((obj) => {
+    return { "fgid": obj.fgid, "statement": obj['directional-statement'] };
+  });
+  const foodGroupsCodes = uniqBy(
+    jmespath.search(canadaFoodGuideData, `foodgroups[*].fgid`),
+    JSON.stringify
+  );
+  // return an array of statements per food group
+  const statementsMapped = foodGroupsCodes.map((fgid) => {
+    return {
+      fgid,
+      statements: jmespath.search(statementsCleaned, `[?fgid=='${fgid}'].statement`),
+    };
+  });
+  // inject into servings data
+  const statementsJoined = innerJoin(servingsJoined, statementsMapped, "fgid", "fgid");
+
+  // TODO: add a list of elements of the menu using random choices
+  // TODO: save the results and make sure the next day uses different ones (save to user DB)
+
   const result = {
     login: user.login,
-    servingsPerFoodGroup: joined.map((obj) => {
+    servingsPerFoodGroup: statementsJoined.map((obj) => {
       return {
         foodgroup: obj.foodgroup,
         servings: obj.servings,
+        statements: obj.statements,
         maxServings: maxServings(obj.servings)
       }
     })
