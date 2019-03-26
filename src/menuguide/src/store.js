@@ -15,6 +15,8 @@ const loadUserData = async (baseurl, login) => {
     }
   } catch (error) {
     console.error(error); // eslint-disable-line no-console
+    console.error(`Failed to get users from ${baseurl}/users`); // eslint-disable-line no-console
+    console.error(`Perhaps the API needs to be started with 'npm start serve'`); // eslint-disable-line no-console
     return;
   }
   return response.data;
@@ -22,37 +24,40 @@ const loadUserData = async (baseurl, login) => {
 
 export default new Vuex.Store({
   state: {
-    login: '',
     user: undefined,
     users: [
       {
-        family: null,
-        firstName: 'Adam',
-        lastName: 'Ministrator',
-        middleName: '',
-        age: 19,
-        weight: {
-          value: 185,
-          units: 'lbs',
-          dataSource: 'scale/wiifit',
+        'login': 'Admin',
+        'firstName': 'Adam',
+        'lastName': 'Ministrator',
+        'middleNameOrInitial': '',
+        'age': 19,
+        'weight': {
+          'value': '185',
+          'units': 'lbs',
+          'dataSource': 'scale/wiifit'
         },
-        height: {
-          value: (5 + 10/12),
-          units: 'ft',
-          dataSource: 'tape/manual',
+        'height': {
+          'value': '5.83',
+          'units': 'ft',
+          'dataSource': 'tape/manual'
         },
-        fat: {
-          value: 20,
-          units: 'percent',
-          dataSource: 'calipers/manual',
+        'gender': 'm',
+        'bloodPressure': {
+          'value': '120/70/65',
+          'units': 'mmHg/mmHg/bpm',
+          'dataSource': 'bp cuff'
         },
+        'bodyFat': {
+          'value': '20',
+          'units': 'percent',
+          'dataSource': 'calipers/manual'
+        },
+        'family': []
       },
     ],
   },
   mutations: {
-    setLogin(state, newLogin) {
-      state.login = newLogin;
-    },
     setUser(state, newUser) {
       state.user = newUser;
     },

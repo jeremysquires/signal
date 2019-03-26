@@ -1,6 +1,6 @@
 <template>
   <div class="user">
-    <NavBar heading="User Profile Page" />
+    <NavBar heading="User Menu Choices" />
     <div v-if="user">
       <ul>
         <li v-for="(value, key) in user" :key="key">
@@ -47,7 +47,7 @@ export default {
       'login',
       'users',
       'user',
-    ])
+    ]),
   },
   async created() {
     await this.setUsers();

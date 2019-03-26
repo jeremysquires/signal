@@ -11,7 +11,7 @@
       From this app you can generate
       <router-link to="/menu">healthy menus</router-link>
       for 
-      <router-link to="/user">families and individuals</router-link>.
+      <router-link to="/users">families and individuals</router-link>.
     </p>
     <p>
       For other
