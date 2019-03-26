@@ -2,11 +2,18 @@
   <div class="menu">
     <NavBar heading="Menu Page" />
     <div>
-      Menu Listing (Family and Individual)
-      <!-- TODO: div v-if="hasFamily" show list of menus -->
-      <!-- TODO: div v-for="member of user.family" show each menu -->
-      <!-- TODO: div v-else show single menu, user = member -->
-      <MenuIndividual />
+      <div v-if="user">
+        Menu for {{ user.firstName }} {{ user.lastName }}
+      </div>
+      <MenuIndividual :login="user.login"/>
+      <div v-if="hasFamily">
+        Menu Listing (Family)
+        <!-- show list of menus -->
+        <div v-for="member of user.family" :key="member">
+          <!-- show each menu -->
+          <MenuIndividual :login="member"/>
+        </div>
+      </div>
     </div>
   </div>
 </template>

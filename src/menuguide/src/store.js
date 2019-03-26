@@ -56,6 +56,7 @@ export default new Vuex.Store({
         'family': []
       },
     ],
+    apiBaseUrl: 'http://localhost:8282/api/v1',
   },
   mutations: {
     setUser(state, newUser) {
@@ -67,7 +68,7 @@ export default new Vuex.Store({
   },
   actions: {
     async setUsers(context) {
-      const remoteUsers = await loadUserData('http://localhost:8282/api/v1');
+      const remoteUsers = await loadUserData(this.state.apiBaseUrl);
       if (remoteUsers && remoteUsers.length > 0) {
         context.commit('setUsers', remoteUsers);
       }

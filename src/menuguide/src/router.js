@@ -36,7 +36,7 @@ const router = new Router({
       beforeEnter: (to, from, next) => {
         if (!store.state.user || (!to.params.login === !store.state.user.login)) {
           // get user from users, if it exists, or route to users
-          const user = find(store.state.user, { 'login': to.params.login });
+          const user = find(store.state.users, { 'login': to.params.login });
           if (!user) {
             next('/users');
           } else {
@@ -47,12 +47,34 @@ const router = new Router({
       },
     },
     {
+      path: '/user/:login',
+      name: 'userprofile',
+      component: User,
+      beforeEnter: (to, from, next) => {
+        if (!store.state.user || (!to.params.login === !store.state.user.login)) {
+          // get user from users, if it exists, or route to users
+          const user = find(store.state.users, { 'login': to.params.login });
+          if (!user) {
+            next('/users');
+          } else {
+            store.commit('setUser', user);
+            console.log(`commit ${store.state.user}`); // eslint-disable-line no-console
+          }
+        }
+        next();
+      },
+    },
+    {
       path: '/user',
       name: 'user',
       component: User,
-      beforeEnter: () => {
-        // to, from, next
-        // TODO: if user is not set, redirect to users for login choice
+      beforeEnter: (to, from, next) => {
+        console.log(store.state.user); // eslint-disable-line no-console
+        if (!store.state.user) {
+          next('/users');
+        } else {
+          next();
+        }
       },
     },
     {
