@@ -1,6 +1,7 @@
 const Koa = require('koa');
 const error = require('koa-json-error');
 const bodyParser = require('koa-bodyparser');
+const cors = require('@koa/cors');
 
 const app = new Koa();
 const router = require('./routes');
@@ -14,6 +15,11 @@ app.use(error(err => ({
 })));
 
 app.use(bodyParser());
+app.use(cors({
+  // allow requests from local microservices
+  // TODO: make this a function of ctx to white/blacklist via rules
+  origin: 'http://localhost:8081',
+}));
 
 app.use(router.routes()).use(router.allowedMethods());
 
