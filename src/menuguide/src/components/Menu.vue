@@ -3,13 +3,14 @@
     <NavBar heading="Menu Page" />
     <div>
       <div v-if="user">
-        Menu for {{ user.firstName }} {{ user.lastName }}
+        <h4>Menu for {{ user.firstName }} {{ user.lastName }}</h4>
+        <MenuIndividual :login="user.login"/>
       </div>
-      <MenuIndividual :login="user.login"/>
       <div v-if="hasFamily">
-        Menu Listing (Family)
+        <h4>Menu Listing (Family)</h4>
         <!-- show list of menus -->
         <div v-for="member of user.family" :key="member">
+          <h5>Menu for {{ member }}</h5>
           <!-- show each menu -->
           <MenuIndividual :login="member"/>
         </div>

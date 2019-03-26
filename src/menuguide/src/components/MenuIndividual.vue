@@ -1,9 +1,10 @@
 <template>
   <div class="menuindividual">
-    Individual Menu
     <div v-if="menu">
+      <!-- TODO: format output data in a more pleasing way -->
+      <h6>Servings Per Food Group</h6>
       <ul>
-        <li v-for="(value, key) in menu" :key="key">
+        <li v-for="(value, key) in menu.servingsPerFoodGroup" :key="key">
           {{ key }}: {{ value }}
         </li>
       </ul>
