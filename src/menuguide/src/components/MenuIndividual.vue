@@ -8,6 +8,12 @@
           {{ key }}: {{ value }}
         </li>
       </ul>
+      <h6>Suggested Food Choices for Menu</h6>
+      <ul>
+        <li v-for="(value, key) in menu.foodSelections" :key="key">
+          {{ key }}: {{ value }}
+        </li>
+      </ul>
     </div>
   </div>
 </template>
