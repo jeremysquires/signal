@@ -1,0 +1,147 @@
+[
+  {
+    "login": "Admin",
+    "firstName": "Adam",
+    "lastName": "Ministrator",
+    "middleNameOrInitial": "",
+    "age": 19,
+    "weight": {
+      "value": "185",
+      "units": "lbs",
+      "dataSource": "scale/wiifit"
+    },
+    "height": {
+      "value": "5.83",
+      "units": "ft",
+      "dataSource": "tape/manual"
+    },
+    "gender": "m",
+    "bloodPressure": {
+      "value": "120/70/65",
+      "units": "mmHg/mmHg/bpm",
+      "dataSource": "bp cuff"
+    },
+    "bodyFat": {
+      "value": "20",
+      "units": "percent",
+      "dataSource": "calipers/manual"
+    },
+    "family": []
+  },
+  {
+    "login": "Mom",
+    "firstName": "Martha",
+    "lastName": "Ministrator",
+    "middleNameOrInitial": "",
+    "age": 34,
+    "weight": {
+      "value": "115",
+      "units": "lbs",
+      "dataSource": "scale/wiifit"
+    },
+    "height": {
+      "value": "5.2",
+      "units": "ft",
+      "dataSource": "tape/manual"
+    },
+    "gender": "f",
+    "bloodPressure": {
+      "value": "150/85/55",
+      "units": "mmHg/mmHg/bpm",
+      "dataSource": "bp cuff"
+    },
+    "bodyFat": {
+      "value": "30",
+      "units": "percent",
+      "dataSource": "calipers/manual"
+    },
+    "family": [ "Dad", "John", "Babs" ]
+  },
+  {
+    "login": "Dad",
+    "firstName": "John",
+    "lastName": "Ministrator",
+    "middleNameOrInitial": "",
+    "age": 36,
+    "weight": {
+      "value": "205",
+      "units": "lbs",
+      "dataSource": "scale/wiifit"
+    },
+    "height": {
+      "value": "6.0",
+      "units": "ft",
+      "dataSource": "tape/manual"
+    },
+    "gender": "m",
+    "bloodPressure": {
+      "value": "130/75/45",
+      "units": "mmHg/mmHg/bpm",
+      "dataSource": "bp cuff"
+    },
+    "bodyFat": {
+      "value": "25",
+      "units": "percent",
+      "dataSource": "calipers/manual"
+    },
+    "family": [ "Mom", "John", "Babs" ]
+  },
+  {
+    "login": "John",
+    "firstName": "John",
+    "lastName": "Ministrator",
+    "middleNameOrInitial": "Jr",
+    "age": 16,
+    "weight": {
+      "value": "185",
+      "units": "lbs",
+      "dataSource": "scale/wiifit"
+    },
+    "height": {
+      "value": "5.8",
+      "units": "ft",
+      "dataSource": "tape/manual"
+    },
+    "gender": "m",
+    "bloodPressure": {
+      "value": "120/75/45",
+      "units": "mmHg/mmHg/bpm",
+      "dataSource": "bp cuff"
+    },
+    "bodyFat": {
+      "value": "10",
+      "units": "percent",
+      "dataSource": "calipers/manual"
+    },
+    "family": [ "Mom", "Dad", "Babs" ]
+  },
+  {
+    "login": "Babs",
+    "firstName": "Beth",
+    "lastName": "Ministrator",
+    "middleNameOrInitial": "",
+    "age": 5,
+    "weight": {
+      "value": "65",
+      "units": "lbs",
+      "dataSource": "scale/wiifit"
+    },
+    "height": {
+      "value": "4.2",
+      "units": "ft",
+      "dataSource": "tape/manual"
+    },
+    "gender": "f",
+    "bloodPressure": {
+      "value": "100/65/65",
+      "units": "mmHg/mmHg/bpm",
+      "dataSource": "bp cuff"
+    },
+    "bodyFat": {
+      "value": "20",
+      "units": "percent",
+      "dataSource": "calipers/manual"
+    },
+    "family": [ "Mom", "Dad", "John" ]
+  }
+]

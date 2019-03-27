@@ -1,0 +1,179 @@
+FORMAT: 1A
+
+# MenuGuide API
+This API returns menu guidance for individuals and families
+
+# API Root [/api/v1/]
+
+This resource does not have any attributes.
+It offers the initial API affordances.
+
+## Retrieve the Entry Point [GET]
+
++ Response 200 (application/json; charset=utf-8)
+
+  ```
+  {
+    "name": "menuguide-api",
+    "description": "REST API for the Signal MenuGuide",
+    "endpoints": [
+      "/api/v1/users",
+      "/api/v1/users/:login",
+      "/api/v1/menu/:login",
+      "/api/v1/"
+    ]
+  }
+  ```
+
+# Users List [/api/v1/users]
+
+Gets all user's information in an array.
+
+## Get users list [GET]
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (UserList)
+
+# Users by Login ID [/api/v1/users/{login}]
+
+Gets one user's information.
+
+## Get user by Id [GET]
+
++ Parameters
+    + login: `Admin` (string, required)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (User)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (Error)
+
+        Bad Request (unavailable login)
+
+# Menu by Login ID [/api/v1/menu/{login}]
+
+Gets one user's daily menu.
+
+## Get menu by Id [GET]
+
++ Parameters
+    + login: `Admin` (string, required)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (Menu)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (Error)
+
+        Bad Request (unavailable login)
+
+# Family Menus by Login ID [/api/v1/menu/{login}{?family}]
+
+Gets a family's daily menu.
+
+## Get family menus by Id [GET]
+
++ Parameters
+    + login: `Mom` (string, required)
+    + family: `true` (string, required)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (array[Menu])
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (Error)
+
+        Bad Request (unavailable login)
+
+# Data Structures
+
+## Error (object)
+
+### Properties
++ err (string, required)
+
+## SensorData (object)
+
+    TODO: make units and data sources enums
+
++ value: '185' (string, required)
++ units: 'lbs' (string, required)
++ dataSource: 'scale/wiifit' (string, required)
+
+## UserList (array[User])
+
+## Gender (enum[string])
++ 'm' - male
++ 'f' - female
++ 'n' - non-binary
+
+### Default: 'n'
+
+## User (object)
++ login (string, required)
++ firstName (string, required)
++ lastName (string, required)
++ middleNameOrInitial (string, optional)
++ age (number, required)
++ weight (SensorData, required)
++ height (SensorData, required)
++ gender (Gender, required)
++ bloodPressure (SensorData, required)
++ bodyFat (SensorData, required)
++ family (array[string], required)
+
+    User is a JSON object indexed by login
+
+        ```
+        {
+          login: 'Admin',
+          firstName: 'Adam',
+          lastName: 'Ministrator',
+          middleNameOrInitial: '',
+          age: 19,
+          weight: {
+            value: '185',
+            units: 'lbs',
+            dataSource: 'scale/wiifit',
+          },
+          height: {
+            value: '5.83',
+            units: 'ft',
+            dataSource: 'tape/manual',
+          },
+          gender: 'm',
+          bloodPressure: {
+            value: '120/70/65',
+            units: 'mmHg/mmHg/bpm',
+            dataSource: 'bp cuff',
+          },
+          bodyFat: {
+            value: '20',
+            units: 'percent',
+            dataSource: 'calipers/manual',
+          },
+          family: [],
+        }
+        ```
+
+## Servings (object)
++ foodGroup (string, required)
++ servings (string, required)
++ statements (array[string], required)
++ maxServings (number, required)
+
+## Food (object)
++ food (string, required)
++ servingSize (string, required)
++ foodGroup (string, required)
++ foodCategory (string, required)
+
+## FoodsByFoodGroup (object)
++ foodGroup (string, required)
++ foods (array[Food], required)
+
+## Menu (object)
++ login (string, required)
++ servingsPerFoodGroup (array[Servings], required)
++ foodSelections (array[FoodsByFoodGroup], required)

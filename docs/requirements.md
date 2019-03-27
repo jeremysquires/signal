@@ -74,7 +74,7 @@ So that I can improve the health of my family
   - Dietary constraints
   - Cooking infrastructure
 
-## Peronal Data Requirements
+## Personal Data Requirements
 
 - Physical Stats to establish baseline and needs
   - Age
@@ -82,12 +82,11 @@ So that I can improve the health of my family
   - Height
   - Gender
 - Health metrics
-  - Fat % from caliper readings
+  - Body Fat %
   - Blood Pressure
 
-## Technology
+## Record of Decisions
 
-- Node
-- Vue
-- KOA
-- API Blueprint
+- Should family members have individual logins, or will a family owner be the only login?
+  - Decision: Design the user family structure to allow all users a separate login
+

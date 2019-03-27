@@ -2,12 +2,55 @@
 <?taskcoach release="1.4.3" tskversion="37"?>
 
 <tasks>
+<task actualstartdate="2019-03-11 16:10:40.913000" creationDateTime="2019-03-11 16:10:22.843000" id="7720fcae-444a-11e9-9186-60a44c6e2f97" modificationDateTime="2019-03-26 23:11:50.525363" status="1" subject="Front End">
+<effort id="1650ea9a-4e7b-11e9-bb6c-6c71d921268b" start="2019-03-24 15:23:37" status="1" stop="2019-03-24 15:28:04" />
+<effort id="55631c11-4699-11e9-951e-60a44c6e2f97" start="2019-03-14 14:39:58" status="1" stop="2019-03-14 14:59:53" />
+<effort id="7431b998-4753-11e9-bbac-60a44c6e2f97" start="2019-03-15 12:52:16" status="1" stop="2019-03-15 13:00:00" />
+<effort id="81e64011-444a-11e9-9224-60a44c6e2f97" start="2019-03-11 16:10:40" status="1" stop="2019-03-11 16:34:17" />
+<effort id="8564420f-46a1-11e9-97b7-60a44c6e2f97" start="2019-03-14 15:38:35" status="1" stop="2019-03-14 16:00:00" />
+<effort id="87864791-4508-11e9-ac6f-60a44c6e2f97" start="2019-03-12 14:50:54" status="1" stop="2019-03-12 15:20:59" />
+<effort id="8e757530-4693-11e9-9377-60a44c6e2f97" start="2019-03-14 13:58:37" status="1" stop="2019-03-14 14:05:08" />
+<effort id="9f02cf8f-44e2-11e9-96b5-60a44c6e2f97" start="2019-03-12 10:19:33" status="1" stop="2019-03-12 10:36:53" />
+<effort id="a0f74bc0-4512-11e9-841d-60a44c6e2f97" start="2019-03-12 15:30:00" status="1" stop="2019-03-12 16:03:27" />
+<effort id="ae8f4cae-4ffa-11e9-8a2b-60a44c6e2f97" start="2019-03-26 13:09:30" status="1" stop="2019-03-26 14:39:30" />
+<effort id="b210e170-44de-11e9-8b94-60a44c6e2f97" start="2019-03-12 09:51:27" status="1" stop="2019-03-12 09:59:51" />
+<effort id="b79e3240-4502-11e9-b53b-60a44c6e2f97" start="2019-03-12 14:09:18" status="1" stop="2019-03-12 14:36:26" />
+<effort id="d3f568f8-504e-11e9-8a2b-60a44c6e2f97" start="2019-03-26 23:11:50" status="1" stop="2019-03-26 23:21:24" />
+<effort id="dc56d800-46b3-11e9-a576-60a44c6e2f97" start="2019-03-14 17:00:00" status="1" stop="2019-03-14 17:49:53" />
+<effort id="ecdb4544-4fdc-11e9-8a2b-60a44c6e2f97" start="2019-03-26 09:36:29" status="1" stop="2019-03-26 11:30:00" />
+<effort id="ff5c7aa2-4fd8-11e9-8a2b-60a44c6e2f97" start="2019-03-26 09:08:22" status="1" stop="2019-03-26 09:17:01" />
+</task>
+<task actualstartdate="2019-03-18 08:45:57.297009" creationDateTime="2019-03-18 08:45:30.861363" id="7a5c1a30-498c-11e9-a863-60a44c6e2f97" modificationDateTime="2019-03-26 23:11:32.732812" status="1" subject="API">
+<effort id="10f5851c-4a87-11e9-a863-60a44c6e2f97" start="2019-03-19 14:39:17" status="1" stop="2019-03-19 15:33:17" />
+<effort id="196b1d24-5027-11e9-8a2b-60a44c6e2f97" start="2019-03-26 18:27:27" status="1" stop="2019-03-26 19:45:15" />
+<effort id="1a28b048-4abc-11e9-a863-60a44c6e2f97" start="2019-03-19 20:58:56" status="1" stop="2019-03-19 22:00:31" />
+<effort id="30641d1a-4a59-11e9-a863-60a44c6e2f97" start="2019-03-19 09:10:53" status="1" stop="2019-03-19 09:27:25" />
+<effort id="4143d732-4a9b-11e9-a863-60a44c6e2f97" start="2019-03-19 17:03:48" status="1" stop="2019-03-19 17:40:17" />
+<effort id="415b4836-4b45-11e9-8028-60a44c6e2f97" start="2019-03-20 13:20:43" status="1" stop="2019-03-20 13:29:38" />
+<effort id="4cc21c7c-5009-11e9-8a2b-60a44c6e2f97" start="2019-03-26 14:54:08" status="1" stop="2019-03-26 15:12:37" />
+<effort id="4d689c40-49bb-11e9-a863-60a44c6e2f97" start="2019-03-18 14:20:41" status="1" stop="2019-03-18 14:48:22" />
+<effort id="70967814-4bf9-11e9-8028-60a44c6e2f97" start="2019-03-21 10:50:31" status="1" stop="2019-03-21 12:11:16" />
+<effort id="7ebabfce-4a67-11e9-a863-60a44c6e2f97" start="2019-03-19 10:53:17" status="1" stop="2019-03-19 12:14:51" />
+<effort id="8a1dddfa-498c-11e9-a863-60a44c6e2f97" start="2019-03-18 08:45:57" status="1" stop="2019-03-18 09:09:03" />
+<effort id="92095358-4b55-11e9-8028-60a44c6e2f97" start="2019-03-20 15:17:30" status="1" stop="2019-03-20 15:27:57" />
+<effort id="92b61166-4a82-11e9-a863-60a44c6e2f97" start="2019-03-19 14:07:07" status="1" stop="2019-03-19 14:30:00" />
+<effort id="a4a3e21a-49f4-11e9-a863-60a44c6e2f97" start="2019-03-18 21:11:09" status="1" stop="2019-03-18 21:40:27" />
+<effort id="c2847bca-4beb-11e9-8028-60a44c6e2f97" start="2019-03-21 09:12:36" status="1" stop="2019-03-21 10:24:02" />
+<effort id="c95a75a0-504e-11e9-8a2b-60a44c6e2f97" start="2019-03-26 22:45:00" status="1" stop="2019-03-26 23:11:34" />
+<effort id="d4bfbe5e-5013-11e9-8a2b-60a44c6e2f97" start="2019-03-26 16:09:31" status="1" stop="2019-03-26 16:24:38" />
+<effort id="d69a92ee-4acd-11e9-a863-60a44c6e2f97" start="2019-03-19 23:05:54" status="1" stop="2019-03-20 00:30:00" />
+<effort id="dee64074-4a96-11e9-a863-60a44c6e2f97" start="2019-03-19 16:32:25" status="1" stop="2019-03-19 16:58:06" />
+<effort id="fc212d1e-4c0f-11e9-8028-60a44c6e2f97" start="2019-03-21 13:31:54" status="1" stop="2019-03-21 18:21:45" />
+</task>
 <task creationDateTime="2019-03-04 10:20:40.581000" id="d59a0b51-3ea1-11e9-87f2-60a44c6e2f97" modificationDateTime="2019-03-04 10:21:00.947000" status="1" subject="Tests" />
 <task creationDateTime="2019-03-04 10:21:13.040000" id="e8f2e500-3ea1-11e9-b83e-60a44c6e2f97" modificationDateTime="2019-03-04 10:21:36.869000" status="1" subject="Infrastrucutre" />
-<task actualstartdate="2019-03-04 09:00:48" creationDateTime="2019-03-04 10:00:20.706000" id="fe7fe421-3e9e-11e9-8ed9-60a44c6e2f97" modificationDateTime="2019-03-11 10:38:42.669000" status="1" subject="Planning">
+<task actualstartdate="2019-03-04 09:00:48" creationDateTime="2019-03-04 10:00:20.706000" id="fe7fe421-3e9e-11e9-8ed9-60a44c6e2f97" modificationDateTime="2019-03-19 15:56:28.862849" status="1" subject="Planning">
 <effort id="0ef1072e-3e9f-11e9-9af7-60a44c6e2f97" start="2019-03-04 09:30:00" status="1" stop="2019-03-04 10:17:13" />
 <effort id="19d90d70-3ea2-11e9-8441-60a44c6e2f97" start="2019-03-04 10:22:35" status="1" stop="2019-03-04 10:37:14" />
 <effort id="21b369cf-441c-11e9-805d-60a44c6e2f97" start="2019-03-11 10:38:42" status="1" stop="2019-03-11 10:52:17" />
+<effort id="878b212e-4a77-11e9-a863-60a44c6e2f97" start="2019-03-19 12:48:04" status="1" stop="2019-03-19 14:07:05" />
+<effort id="d957be62-4a91-11e9-a863-60a44c6e2f97" start="2019-03-19 15:56:28" status="1" stop="2019-03-19 16:32:22" />
+<effort id="f84d098e-4993-11e9-a863-60a44c6e2f97" start="2019-03-18 09:39:08" status="1" stop="2019-03-18 10:02:28" />
 </task>
 <syncmlconfig>
 <TaskCoach-0000016949a6062d63b23e7100c000a800010049>
