@@ -1,15 +1,34 @@
-# The dbLayer GraphQL Server API
+## MenuGuide API
 
-The dbLayer server listens on 8282 for requests
+The MenuGuide API provides data for the MenuGuide Front End.
 
-- Pull up a graphiql query IDE: http://localhost:8282/graphql
-- Specify a query: http://localhost:8282/graphql?query=%0A%0A%7B%20hello%20%7D%0A%0A
-  - Comment: %23
-  - Bracket: %7B
-  - Space: %20
-  - NewLine: %0A
+The details of the API endpoints are documented in API Blueprint format in [docs/menuguide.apib](docs/menuguide.apib), but they comprise two main services: Users and Menu. Once the API is running in development mode, these services can be accessed locally through the URLs:
 
-## Development
+- `http://localhost:8282/api/v1/users/:login`
+- `http://localhost:8282/api/v1/menu/:login`
 
-- `npm install nodemon -g`
-- `nodemon server`
+### Quick Start
+
+#### Prerequisites
+
+- Node v8.5.0+
+
+#### Install NPM modules / scripts
+
+> `cd src/api`
+>
+> `npm install -g dredd`
+>
+> `npm install`
+
+#### Run
+
+> `cd src/api`
+>
+> `npm run serve`
+
+#### Test
+
+> `cd src/api`
+>
+> `npm run test`

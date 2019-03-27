@@ -74,7 +74,7 @@ So that I can improve the health of my family
   - Dietary constraints
   - Cooking infrastructure
 
-## Peronal Data Requirements
+## Personal Data Requirements
 
 - Physical Stats to establish baseline and needs
   - Age
@@ -85,8 +85,8 @@ So that I can improve the health of my family
   - Body Fat %
   - Blood Pressure
 
-## Records of Decisions
+## Record of Decisions
 
-- Should family members all have individual logins, or will a family always have one owner that logs in?
+- Should family members have individual logins, or will a family owner be the only login?
   - Decision: Design the user family structure to allow all users a separate login
 

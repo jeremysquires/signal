@@ -1,18 +1,33 @@
-# Development Docs
+# MenuGuide Development
 
-## API
+## MenuGuide API
+
+The MenuGuide API provides data for the MenuGuide Front End.
+
+The details of the API endpoints are documented in API Blueprint format in [menuguide.apib](../src/api/docs/menuguide.apib), but they comprise two main services: Users and Menu. Once the API is running in development mode, these services can be accessed locally through the URLs:
+
+- `http://localhost:8282/api/v1/users/:login`
+- `http://localhost:8282/api/v1/menu/:login`
 
 ### Quick Start
 
+#### Prerequisites
+
+- Node v8.5.0+
+
 #### Install NPM modules / scripts
 
+> `cd src/api`
+>
 > `npm install -g dredd`
+>
+> `npm install`
 
 #### Run
 
 > `cd src/api`
 >
-> `node ./server.js`
+> `npm run serve`
 
 #### Test
 
@@ -95,9 +110,18 @@ In the docs folder you will find markdown files in the API blueprint format that
 - [JSON-Function (Inner Join)](https://worn.gitbook.io/json-function/)
 - [lodash](https://lodash.com/docs/4.17.11)
 
-## Front End
+## MenuGuide Front End
+
+The MenuGuide Front End is a proof of concept front end app that accesses the MenuGuide API to allow testing of the Users and Menu endpoints of the API. It is designed to show that the basic user stories are supported by the API.
+
+Once the server is started, open the app in a browser at the URL indicated by the serve command, usually [http://localhost:8081](http://localhost:8081).
 
 ### Quick Start
+
+#### Prerequisites
+
+- Node v8.5.0+
+- MenuGuide API started - see [api/README.md](../src/api/README.md)
 
 #### Install Vue Modules and Plugins
 
@@ -107,13 +131,11 @@ In the docs folder you will find markdown files in the API blueprint format that
 
 #### Build and Run
 
-> `cd menuguide`
+> `cd src/menuguide`
 >
 > `npm install`
 >
 > `npm run serve`
->
-> Open in browser at the URL indicated by the serve command
 
 ### Future Implementation Ideas
 
