@@ -13,6 +13,7 @@ const router = new Router();
 
 // cache for the canada food guide file contents
 let canadaFoodGuideData;
+let extraFoodGuideData;
 
 const loadUserData = async (baseurl, login) => {
   let response;
@@ -29,9 +30,53 @@ const loadUserData = async (baseurl, login) => {
   return response.data;
 };
 
+const generateFoodGuideExtraData = () => {
+  // TODO: cache this data, store to external file, etc.
+  const foodGroups = uniqBy(
+    jmespath.search(canadaFoodGuideData, `foodgroups[*].{fgid: fgid, foodgroup: foodgroup}`),
+    JSON.stringify
+  );
+  // change directional-statement keyname to allow jmespath to address a query
+  const statementsCleaned = canadaFoodGuideData.fg_directional_satements.map((obj) => {
+    return { "fgid": obj.fgid, "statement": obj['directional-statement'] };
+  });
+  const foodGroupsCodes = uniqBy(
+    jmespath.search(canadaFoodGuideData, `foodgroups[*].fgid`),
+    JSON.stringify
+  );
+  // return an array of statements per food group
+  const statementsMapped = foodGroupsCodes.map((fgid) => {
+    return {
+      fgid,
+      statements: jmespath.search(statementsCleaned, `[?fgid=='${fgid}'].statement`),
+    };
+  });
+  // add the food group names
+  const foodGroupsJoined = innerJoin(canadaFoodGuideData.foods, foodGroups, "fgid", "fgid");
+  // add the food category names
+  const foodCategoryJoined = innerJoin(foodGroupsJoined, canadaFoodGuideData.foodgroups, "fgcat_id", "fgcat_id");
+  const foodChoices = foodCategoryJoined.map((obj) => {
+    return {
+      food: obj.food,
+      servingSize: obj.srvg_sz,
+      foodGroup: obj.foodgroup,
+      foodCategory: obj.fgcat,
+    }
+  });
+  extraFoodGuideData = {
+    foodGroups,
+    statementsMapped,
+    foodChoices,
+  };
+  return extraFoodGuideData;
+};
+
 const loadCanadaFoodGuideData = async (convert = false, reload = false) => {
   // return the cached canada food guide file contents
   if (canadaFoodGuideData && !reload) {
+    if (!extraFoodGuideData) {
+      generateFoodGuideExtraData();
+    }
     return canadaFoodGuideData;
   }
   // if previously converted, return it
@@ -39,6 +84,9 @@ const loadCanadaFoodGuideData = async (convert = false, reload = false) => {
   if (fs.existsSync(jsonFilePath) && !convert) {
     // TODO: add try catch here
     canadaFoodGuideData = await fs.readJson(jsonFilePath);
+    if (!extraFoodGuideData) {
+      generateFoodGuideExtraData();
+    }
     return canadaFoodGuideData;
   }
   console.log('Fetching and converting Canada food quide data.'); // eslint-disable-line no-console
@@ -62,6 +110,7 @@ const loadCanadaFoodGuideData = async (convert = false, reload = false) => {
     result[file.fileName.replace(afterDashRe, '')] = file.contents;
   });
   canadaFoodGuideData = result;
+  generateFoodGuideExtraData();
   // save the results of conversion for next server start
   try {
     await fs.writeJson(jsonFilePath, result);
@@ -81,6 +130,13 @@ const maxServings = (servingRange) => {
 };
 
 const getMenu = (user) => {
+  // retrieve extra generated structures
+  const {
+    foodGroups,
+    statementsMapped,
+    foodChoices,
+  } = extraFoodGuideData;
+
   // extract servings relevant to user's age and gender
   const mappedGender = genderMap[user.gender];
   const ageRange = getAgeRange(user.age);
@@ -89,44 +145,29 @@ const getMenu = (user) => {
     `servings_per_day[?gender=='${mappedGender}' && ages=='${ageRange}']`);
 
   // add food group name using SQL like join on fgid
-  const foodGroups = uniqBy(
-    jmespath.search(canadaFoodGuideData, `foodgroups[*].{fgid: fgid, foodgroup: foodgroup}`),
-    JSON.stringify
-  );
   const servingsJoined = innerJoin(servingsPerDay, foodGroups, "fgid", "fgid");
 
   // add directional statements per food group
-  // change directional-statement keyname to allow jmespath to address a query
-  const statementsCleaned = canadaFoodGuideData.fg_directional_satements.map((obj) => {
-    return { "fgid": obj.fgid, "statement": obj['directional-statement'] };
-  });
-  const foodGroupsCodes = uniqBy(
-    jmespath.search(canadaFoodGuideData, `foodgroups[*].fgid`),
-    JSON.stringify
-  );
-  // return an array of statements per food group
-  const statementsMapped = foodGroupsCodes.map((fgid) => {
-    return {
-      fgid,
-      statements: jmespath.search(statementsCleaned, `[?fgid=='${fgid}'].statement`),
-    };
-  });
-  // inject into servings data
   const statementsJoined = innerJoin(servingsJoined, statementsMapped, "fgid", "fgid");
+  const servingsPerFoodGroup = statementsJoined.map((obj) => {
+    return {
+      foodgroup: obj.foodgroup,
+      servings: obj.servings,
+      statements: obj.statements,
+      maxServings: maxServings(obj.servings)
+    }
+  });
 
-  // TODO: add a list of elements of the menu using random choices
-  // TODO: save the results and make sure the next day uses different ones (save to user DB)
+  // TODO: create a list of food choices to include in the menu
+  // limit the number of food choices by the maximum number of servings per food group
+  // make the choices randomly
+
+  // TODO: save the results to ensure the next use has variation
 
   const result = {
     login: user.login,
-    servingsPerFoodGroup: statementsJoined.map((obj) => {
-      return {
-        foodgroup: obj.foodgroup,
-        servings: obj.servings,
-        statements: obj.statements,
-        maxServings: maxServings(obj.servings)
-      }
-    })
+    servingsPerFoodGroup,
+    foodChoices,
   };
   return result;
 };
