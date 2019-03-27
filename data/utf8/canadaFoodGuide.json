@@ -1,0 +1,1573 @@
+{
+    "foods": [
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup, 6 spears",
+            "food": "Asparagus",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Beans, green",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup cooked",
+            "food": "Bok choy/Chinese cabbage (Choi sum)",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Broccoli",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup, 4 sprouts",
+            "food": "Brussels sprouts",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "2",
+            "srvg_sz": "125 mL, ½ cup, 1 large",
+            "food": "Carrots",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Chard",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "250 mL, 1 cup raw",
+            "food": "Dandelion greens",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "250 mL, 1 cup",
+            "food": "Endive",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Fiddleheads",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "250 mL, 1 cup raw",
+            "food": "Kale/collards",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup, ½ leek",
+            "food": "Leeks",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "250 mL, 1 cup raw",
+            "food": "Lettuce, romaine",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "250 mL, 1 cup raw",
+            "food": "Mesclun mix",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "250 mL, 1 cup raw",
+            "food": "Mustard greens",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Okra",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Peas",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "2",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Pumpkin",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Seaweed",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Snow peas",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "250 mL, 1 cup raw",
+            "food": "Spinach",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "2",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Squash",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "2",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Sweet potato",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "2",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Yam",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "3 fruits",
+            "food": "Apricot, fresh",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Cantaloupe",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup, ½ fruit",
+            "food": "Mango",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "1 fruit",
+            "food": "Nectarine",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "½ fruit",
+            "food": "Papaya",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "1 medium",
+            "food": "Peach",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "1 medium",
+            "food": "Apple",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "½ fruit",
+            "food": "Avocado",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Bamboo shoots",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "1 medium",
+            "food": "Banana",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Beans, yellow",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Beets",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Berries",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup, ½ pod",
+            "food": "Bitter melon",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Cabbage",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup, 4 flowerets",
+            "food": "Cauliflower",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "1 medium stalk",
+            "food": "Celery",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Chayote",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "20",
+            "food": "Cherries",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "1 ear, 125 mL, ½ cup",
+            "food": "Corn",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Cucumber",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "60 mL, ¼ cup",
+            "food": "Dried fruit",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Eggplant",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "2 medium",
+            "food": "Fig, fresh",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "½ fruit",
+            "food": "Grapefruit",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "20 fruits",
+            "food": "Grapes",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup, 1 fruit",
+            "food": "Guava",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Honeydew",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, 1/2 cup",
+            "food": "100% fruit juice",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "1 large fruit",
+            "food": "Kiwi",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Kohlrabi",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "250 mL, 1 cup raw",
+            "food": "Lettuce (example: iceberg or butterhead)",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "10 fruits",
+            "food": "Lychee",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Mixed vegetables",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Mushrooms",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "1 medium",
+            "food": "Orange",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "1 medium",
+            "food": "Pear",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup, ½ medium",
+            "food": "Peppers, bell",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup, 1 slice",
+            "food": "Pineapple",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Plantain",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "1 fruit",
+            "food": "Plum",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup, ½ medium",
+            "food": "Potato",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Radishes",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Rhubarb",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Tomato",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Tomato sauce",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Turnip",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Vegetable juice, lower sodium",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "0",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Watermelon",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Zucchini",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup, ½ medium",
+            "food": "Pepper, sweet, green",
+            "field5": ""
+        },
+        {
+            "fgid": "vf",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup",
+            "food": "Edemame (soy beans)",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "125 mL, ½ cup cooked",
+            "food": "Barley",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "½ bagel, 45 g",
+            "food": "Bagel, whole grain",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "1 slice, 35 g",
+            "food": "Bread, pumpernickel or rye",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "1 slice, 35 g",
+            "food": "Bread, whole grain",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "1",
+            "srvg_sz": "125 mL, ½ cup cooked",
+            "food": "Bulgur",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "30 g",
+            "food": "Cereal, cold, whole grain",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "150 g, 175 mL, ¾ cup cooked",
+            "food": "Cereal, hot, whole grain (example: oatmeal)",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "30 g",
+            "food": "Crackers, rye",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "½, 35 g",
+            "food": "Muffin, whole grain",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "125 mL, ½ cup cooked",
+            "food": "Quinoa",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "125 mL, ½ cup cooked",
+            "food": "Rice, brown",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "125 mL, ½ cup cooked",
+            "food": "Pasta/noodles, whole grain",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "½ pita, 35 g",
+            "food": "Pita, whole wheat",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "½ piece, 35 g",
+            "food": "Tortilla, corn",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "½ piece, 35 g",
+            "food": "Tortilla, whole wheat",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "1 medium, 35 g",
+            "food": "Bannock",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "1 slice, 35 g",
+            "food": "Baguette, French",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "1 slice, 35 g",
+            "food": "Bread, white",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "30 g",
+            "food": "Cereal, cold",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "150 g, 175 mL, ¾ cup cooked",
+            "food": "Cereal, hot, for example: cream of wheat",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "125 mL, ½ cup cooked",
+            "food": "Congee",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "1 slice, 35 g",
+            "food": "Cornbread",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "125 mL, ½ cup cooked",
+            "food": "Couscous",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "10, 30 g",
+            "food": "Cracker, saltines",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "½ muffin, 35 g",
+            "food": "English muffin, white",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "¼ naan, 35 g",
+            "food": "Naan",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "1 small, 35 g",
+            "food": "Pancake",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "125 mL, ½ cup cooked",
+            "food": "Pasta/noodles, white",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "½ pita, 35 g",
+            "food": "Pita, white",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "125 mL, ½ cup cooked",
+            "food": "Polenta",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "125 mL, ½ cup cooked",
+            "food": "Rice, white",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "2 medium",
+            "food": "Rice cake, plain",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "4",
+            "srvg_sz": "1 roll, 35 g",
+            "food": "Roll, white",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "30 g",
+            "food": "Crackers, whole wheat",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "125 mL, ½ cup cooked",
+            "food": "Rice, wild",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "1 roll, 35 g",
+            "food": "Roll, whole wheat",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "125 mL, ½ cup - cooked",
+            "food": "Couscous, whole wheat",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "500 mL, 2 cups",
+            "food": "Popcorn, without added fat or salt",
+            "field5": ""
+        },
+        {
+            "fgid": "gr",
+            "fgcat_id": "3",
+            "srvg_sz": "½ muffin, 35 g",
+            "food": "English muffin, whole grain",
+            "field5": ""
+        },
+        {
+            "fgid": "mi",
+            "fgcat_id": "6",
+            "srvg_sz": "250 mL, 1 cup",
+            "food": "Buttermilk",
+            "field5": ""
+        },
+        {
+            "fgid": "mi",
+            "fgcat_id": "6",
+            "srvg_sz": "250 mL, 1 cup",
+            "food": "Fortified soy beverage (unsweetened)",
+            "field5": ""
+        },
+        {
+            "fgid": "mi",
+            "fgcat_id": "5",
+            "srvg_sz": "250 mL, 1 cup",
+            "food": "Milk, 1%, 2%, skim",
+            "field5": ""
+        },
+        {
+            "fgid": "mi",
+            "fgcat_id": "5",
+            "srvg_sz": "125 mL, ½ cup undiluted",
+            "food": "Milk, evaporated, canned",
+            "field5": ""
+        },
+        {
+            "fgid": "mi",
+            "fgcat_id": "5",
+            "srvg_sz": "250 mL, 1 cup",
+            "food": "Milk, goat, enriched",
+            "field5": ""
+        },
+        {
+            "fgid": "mi",
+            "fgcat_id": "5",
+            "srvg_sz": "250 mL, 1 cup",
+            "food": "Milk, lactose reduced",
+            "field5": ""
+        },
+        {
+            "fgid": "mi",
+            "fgcat_id": "5",
+            "srvg_sz": "250 mL, 1 cup reconstitued",
+            "food": "Milk, powdered",
+            "field5": ""
+        },
+        {
+            "fgid": "mi",
+            "fgcat_id": "5",
+            "srvg_sz": "25 g, 75 mL, 1/3 cup",
+            "food": "Milk, powdered",
+            "field5": ""
+        },
+        {
+            "fgid": "mi",
+            "fgcat_id": "6",
+            "srvg_sz": "50 g, 1 , ½ oz",
+            "food": "Cheese, block (Cheddar, Mozzarella, Swiss, feta)",
+            "field5": ""
+        },
+        {
+            "fgid": "mi",
+            "fgcat_id": "6",
+            "srvg_sz": "250 ml, 1 cup",
+            "food": "Cheese, cottage or quark",
+            "field5": ""
+        },
+        {
+            "fgid": "mi",
+            "fgcat_id": "6",
+            "srvg_sz": "50 g, 1 , ½ oz",
+            "food": "Cheese, goat",
+            "field5": ""
+        },
+        {
+            "fgid": "mi",
+            "fgcat_id": "6",
+            "srvg_sz": "50 g, 1 , ½ oz",
+            "food": "Paneer",
+            "field5": ""
+        },
+        {
+            "fgid": "mi",
+            "fgcat_id": "6",
+            "srvg_sz": "175 g, 175ml, ¾ cup",
+            "food": "Yogurt, plain",
+            "field5": ""
+        },
+        {
+            "fgid": "mi",
+            "fgcat_id": "5",
+            "srvg_sz": "250 mL, 1 cup",
+            "food": "Milk, whole",
+            "field5": ""
+        },
+        {
+            "fgid": "mi",
+            "fgcat_id": "6",
+            "srvg_sz": "175 g, 175 mL, ¾ cup",
+            "food": "Kefir",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "7",
+            "srvg_sz": "175 mL, ¾ cup",
+            "food": "Beans, cooked and canned",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "7",
+            "srvg_sz": "2",
+            "food": "Eggs",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "7",
+            "srvg_sz": "175 mL, ¾ cup",
+            "food": "Lentils",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "7",
+            "srvg_sz": "60 mL, ¼ cup",
+            "food": "Nuts, shelled",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "7",
+            "srvg_sz": "30 mL, 2 Tbsp",
+            "food": "Peanut butter or nut butters",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "7",
+            "srvg_sz": "60 mL, ¼ cup",
+            "food": "Seeds, shelled",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "7",
+            "srvg_sz": "150 g, 175 mL, ¾ cup",
+            "food": "Tofu",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Beef",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Bison/Buffalo",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Chicken",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Deli meat, low-fat, lower sodium",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Duck",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Fish and shellfish, canned (example: crab, salmon, tuna)",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Fish, fresh or frozen (example: herring, mackerel, trout, salmon, sardines, squid, tuna)",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Game birds (example: ptarmigan, partridge, grouse, goose)",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Game meats (example: deer, moose, caribou, elk)",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Goat",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Ham",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Lamb",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Organ meat (example: liver, kidney)",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Pork",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Rabbit /Hare",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Shellfish, fresh or frozen (example: clams, crab, lobster, mussels, scallops, shrimp, prawns)",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Turkey",
+            "field5": ""
+        },
+        {
+            "fgid": "me",
+            "fgcat_id": "8",
+            "srvg_sz": "75 g (2½ oz) / 125 mL (½ cup)",
+            "food": "Veal",
+            "field5": ""
+        }
+    ],
+    "fg_directional_satements": [
+        {
+            "fgid": "vf",
+            "directional-statement": "Eat at least one dark green and one orange vegetable each day."
+        },
+        {
+            "fgid": "vf",
+            "directional-statement": "Choose vegetables and fruit prepared with little or no added fat, sugar or salt."
+        },
+        {
+            "fgid": "vf",
+            "directional-statement": "Have vegetables and fruit more often than juice."
+        },
+        {
+            "fgid": "gr",
+            "directional-statement": "Make at least half of your grain products whole grain each day."
+        },
+        {
+            "fgid": "gr",
+            "directional-statement": "Choose grain products that are lower in fat, sugar or salt."
+        },
+        {
+            "fgid": "mi",
+            "directional-statement": "Drink skim, 1%, or 2% milk each day."
+        },
+        {
+            "fgid": "mi",
+            "directional-statement": "Select lower fat milk alternatives."
+        },
+        {
+            "fgid": "me",
+            "directional-statement": "Have meat alternatives such as beans, lentils and tofu often."
+        },
+        {
+            "fgid": "me",
+            "directional-statement": "Eat at least two Food Guide Servings of fish each week."
+        },
+        {
+            "fgid": "me",
+            "directional-statement": "Select lean meat and alternatives prepared with little or no added fat or salt."
+        }
+    ],
+    "foodgroups": [
+        {
+            "fgid": "vf",
+            "foodgroup": "Vegetables and Fruit",
+            "fgcat_id": "0",
+            "fgcat": "Non dark green or orange vegetable"
+        },
+        {
+            "fgid": "vf",
+            "foodgroup": "Vegetables and Fruit",
+            "fgcat_id": "1",
+            "fgcat": "Dark green vegetable"
+        },
+        {
+            "fgid": "vf",
+            "foodgroup": "Vegetables and Fruit",
+            "fgcat_id": "2",
+            "fgcat": "Orange vegetable"
+        },
+        {
+            "fgid": "gr",
+            "foodgroup": "Grains",
+            "fgcat_id": "4",
+            "fgcat": "Non whole grain"
+        },
+        {
+            "fgid": "gr",
+            "foodgroup": "Grains",
+            "fgcat_id": "3",
+            "fgcat": "Whole grain"
+        },
+        {
+            "fgid": "mi",
+            "foodgroup": "Milk and Alternatives",
+            "fgcat_id": "5",
+            "fgcat": "Milk"
+        },
+        {
+            "fgid": "mi",
+            "foodgroup": "Milk and Alternatives",
+            "fgcat_id": "6",
+            "fgcat": "Milk Alternataives"
+        },
+        {
+            "fgid": "me",
+            "foodgroup": "Meat and Alternatives",
+            "fgcat_id": "7",
+            "fgcat": "Meat Alternatives"
+        },
+        {
+            "fgid": "me",
+            "foodgroup": "Meat and Alternatives",
+            "fgcat_id": "8",
+            "fgcat": "Meat, fish, poultry and shellfish"
+        }
+    ],
+    "servings_per_day": [
+        {
+            "fgid": "vf",
+            "gender": "Female",
+            "ages": "2 to 3",
+            "servings": "4"
+        },
+        {
+            "fgid": "vf",
+            "gender": "Male",
+            "ages": "2 to 3",
+            "servings": "4"
+        },
+        {
+            "fgid": "vf",
+            "gender": "Female",
+            "ages": "4 to 8",
+            "servings": "5"
+        },
+        {
+            "fgid": "vf",
+            "gender": "Male",
+            "ages": "4 to 8",
+            "servings": "5"
+        },
+        {
+            "fgid": "vf",
+            "gender": "Female",
+            "ages": "9 to 13",
+            "servings": "6"
+        },
+        {
+            "fgid": "vf",
+            "gender": "Male",
+            "ages": "9 to 13",
+            "servings": "6"
+        },
+        {
+            "fgid": "vf",
+            "gender": "Female",
+            "ages": "14 to 18",
+            "servings": "7"
+        },
+        {
+            "fgid": "vf",
+            "gender": "Male",
+            "ages": "14 to 18",
+            "servings": "8"
+        },
+        {
+            "fgid": "vf",
+            "gender": "Female",
+            "ages": "19 to 30",
+            "servings": "7 to 8"
+        },
+        {
+            "fgid": "vf",
+            "gender": "Male",
+            "ages": "19 to 30",
+            "servings": "8 to 10"
+        },
+        {
+            "fgid": "vf",
+            "gender": "Female",
+            "ages": "31 to 50",
+            "servings": "7 to 8"
+        },
+        {
+            "fgid": "vf",
+            "gender": "Male",
+            "ages": "31 to 50",
+            "servings": "8 to 10"
+        },
+        {
+            "fgid": "vf",
+            "gender": "Female",
+            "ages": "51 to 70",
+            "servings": "7"
+        },
+        {
+            "fgid": "vf",
+            "gender": "Male",
+            "ages": "51 to 70",
+            "servings": "7"
+        },
+        {
+            "fgid": "vf",
+            "gender": "Female",
+            "ages": "71+",
+            "servings": "7"
+        },
+        {
+            "fgid": "vf",
+            "gender": "Male",
+            "ages": "71+",
+            "servings": "7"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Female",
+            "ages": "2 to 3",
+            "servings": "3"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Male",
+            "ages": "2 to 3",
+            "servings": "3"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Female",
+            "ages": "4 to 8",
+            "servings": "4"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Male",
+            "ages": "4 to 8",
+            "servings": "4"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Female",
+            "ages": "9 to 13",
+            "servings": "6"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Male",
+            "ages": "9 to 13",
+            "servings": "6"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Female",
+            "ages": "14 to 18",
+            "servings": "6"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Male",
+            "ages": "14 to 18",
+            "servings": "7"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Female",
+            "ages": "19 to 30",
+            "servings": "6 to 7"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Male",
+            "ages": "19 to 30",
+            "servings": "8"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Female",
+            "ages": "31 to 50",
+            "servings": "6 to 7"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Male",
+            "ages": "31 to 50",
+            "servings": "8"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Female",
+            "ages": "51 to 70",
+            "servings": "6"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Male",
+            "ages": "51 to 70",
+            "servings": "7"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Female",
+            "ages": "71+",
+            "servings": "6"
+        },
+        {
+            "fgid": "gr",
+            "gender": "Male",
+            "ages": "71+",
+            "servings": "7"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Female",
+            "ages": "2 to 3",
+            "servings": "2"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Male",
+            "ages": "2 to 3",
+            "servings": "2"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Female",
+            "ages": "4 to 8",
+            "servings": "2"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Male",
+            "ages": "4 to 8",
+            "servings": "2"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Female",
+            "ages": "9 to 13",
+            "servings": "3 to 4"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Male",
+            "ages": "9 to 13",
+            "servings": "3 to 4"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Female",
+            "ages": "14 to 18",
+            "servings": "3 to 4"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Male",
+            "ages": "14 to 18",
+            "servings": "3 to 4"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Female",
+            "ages": "19 to 30",
+            "servings": "2"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Male",
+            "ages": "19 to 30",
+            "servings": "2"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Female",
+            "ages": "31 to 50",
+            "servings": "2"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Male",
+            "ages": "31 to 50",
+            "servings": "2"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Female",
+            "ages": "51 to 70",
+            "servings": "3"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Male",
+            "ages": "51 to 70",
+            "servings": "3"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Female",
+            "ages": "71+",
+            "servings": "3"
+        },
+        {
+            "fgid": "mi",
+            "gender": "Male",
+            "ages": "71+",
+            "servings": "3"
+        },
+        {
+            "fgid": "me",
+            "gender": "Female",
+            "ages": "2 to 3",
+            "servings": "1"
+        },
+        {
+            "fgid": "me",
+            "gender": "Male",
+            "ages": "2 to 3",
+            "servings": "1"
+        },
+        {
+            "fgid": "me",
+            "gender": "Female",
+            "ages": "4 to 8",
+            "servings": "1"
+        },
+        {
+            "fgid": "me",
+            "gender": "Male",
+            "ages": "4 to 8",
+            "servings": "1"
+        },
+        {
+            "fgid": "me",
+            "gender": "Female",
+            "ages": "9 to 13",
+            "servings": "1 to 2"
+        },
+        {
+            "fgid": "me",
+            "gender": "Male",
+            "ages": "9 to 13",
+            "servings": "1 to 2"
+        },
+        {
+            "fgid": "me",
+            "gender": "Female",
+            "ages": "14 to 18",
+            "servings": "2"
+        },
+        {
+            "fgid": "me",
+            "gender": "Male",
+            "ages": "14 to 18",
+            "servings": "3"
+        },
+        {
+            "fgid": "me",
+            "gender": "Female",
+            "ages": "19 to 30",
+            "servings": "2"
+        },
+        {
+            "fgid": "me",
+            "gender": "Male",
+            "ages": "19 to 30",
+            "servings": "3"
+        },
+        {
+            "fgid": "me",
+            "gender": "Female",
+            "ages": "31 to 50",
+            "servings": "2"
+        },
+        {
+            "fgid": "me",
+            "gender": "Male",
+            "ages": "31 to 50",
+            "servings": "3"
+        },
+        {
+            "fgid": "me",
+            "gender": "Female",
+            "ages": "51 to 70",
+            "servings": "2"
+        },
+        {
+            "fgid": "me",
+            "gender": "Male",
+            "ages": "51 to 70",
+            "servings": "3"
+        },
+        {
+            "fgid": "me",
+            "gender": "Female",
+            "ages": "71+",
+            "servings": "2"
+        },
+        {
+            "fgid": "me",
+            "gender": "Male",
+            "ages": "71+",
+            "servings": "3"
+        }
+    ]
+}
