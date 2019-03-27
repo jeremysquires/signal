@@ -172,10 +172,12 @@ const getMenu = (user) => {
     const foodsArray = jmespath.search(foodChoices[current.foodgroup], '*[][]');
     // limit the number of food choices, making the choices randomly
     const randomChoices = sampleSize(foodsArray, current.maxServings);
-    previous.foodGroup = current.foodgroup;
-    previous.foods = randomChoices;
+    previous.push({
+      foodGroup: current.foodgroup,
+      foods: randomChoices,
+    });
     return previous;
-  }, {});
+  }, []);
 
   // TODO: save the results to ensure the next use has variation
 
