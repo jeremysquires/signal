@@ -4,7 +4,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const csvtojson = require('csvtojson');
 const jmespath = require('jmespath');
-const { uniqBy } = require('lodash');
+const { uniqBy, sampleSize } = require('lodash');
 const { innerJoin } = require("json-function");
 const { dataFiles, utf8DataPath, genderMap, getAgeRange } = require('../helpers/canadaFoodGuide');
 const { paramTruth } = require('../helpers/utils');
@@ -30,7 +30,7 @@ const loadUserData = async (baseurl, login) => {
   return response.data;
 };
 
-const generateFoodGuideExtraData = () => {
+const getExtraFoodGuideData = () => {
   // TODO: cache this data, store to external file, etc.
   const foodGroups = uniqBy(
     jmespath.search(canadaFoodGuideData, `foodgroups[*].{fgid: fgid, foodgroup: foodgroup}`),
@@ -55,14 +55,22 @@ const generateFoodGuideExtraData = () => {
   const foodGroupsJoined = innerJoin(canadaFoodGuideData.foods, foodGroups, "fgid", "fgid");
   // add the food category names
   const foodCategoryJoined = innerJoin(foodGroupsJoined, canadaFoodGuideData.foodgroups, "fgcat_id", "fgcat_id");
-  const foodChoices = foodCategoryJoined.map((obj) => {
-    return {
-      food: obj.food,
-      servingSize: obj.srvg_sz,
-      foodGroup: obj.foodgroup,
-      foodCategory: obj.fgcat,
+  const foodChoices = foodCategoryJoined.reduce((previous, current) => {
+    // foodGroup: { foodCategory: [ { food: blah, servingSize: blah } ] }
+    if (!previous[current.foodgroup]) {
+      previous[current.foodgroup] = {};
     }
-  });
+    if (!previous[current.foodgroup][current.fgcat]) {
+      previous[current.foodgroup][current.fgcat] = [];
+    }
+    previous[current.foodgroup][current.fgcat].push({
+      food: current.food,
+      servingSize: current.srvg_sz,
+      foodGroup: current.foodgroup,
+      foodCategory: current.fgcat,
+    });
+    return previous;
+  }, {});
   extraFoodGuideData = {
     foodGroups,
     statementsMapped,
@@ -75,7 +83,7 @@ const loadCanadaFoodGuideData = async (convert = false, reload = false) => {
   // return the cached canada food guide file contents
   if (canadaFoodGuideData && !reload) {
     if (!extraFoodGuideData) {
-      generateFoodGuideExtraData();
+      getExtraFoodGuideData();
     }
     return canadaFoodGuideData;
   }
@@ -85,7 +93,7 @@ const loadCanadaFoodGuideData = async (convert = false, reload = false) => {
     // TODO: add try catch here
     canadaFoodGuideData = await fs.readJson(jsonFilePath);
     if (!extraFoodGuideData) {
-      generateFoodGuideExtraData();
+      getExtraFoodGuideData();
     }
     return canadaFoodGuideData;
   }
@@ -110,7 +118,7 @@ const loadCanadaFoodGuideData = async (convert = false, reload = false) => {
     result[file.fileName.replace(afterDashRe, '')] = file.contents;
   });
   canadaFoodGuideData = result;
-  generateFoodGuideExtraData();
+  getExtraFoodGuideData();
   // save the results of conversion for next server start
   try {
     await fs.writeJson(jsonFilePath, result);
@@ -158,16 +166,23 @@ const getMenu = (user) => {
     }
   });
 
-  // TODO: create a list of food choices to include in the menu
-  // limit the number of food choices by the maximum number of servings per food group
-  // make the choices randomly
+  // create a list of food choices to potentially include in the menu
+  const foodSelections = servingsPerFoodGroup.reduce((previous, current) => {
+    // flatten the food categories into a blended array
+    const foodsArray = jmespath.search(foodChoices[current.foodgroup], '*[][]');
+    // limit the number of food choices, making the choices randomly
+    const randomChoices = sampleSize(foodsArray, current.maxServings);
+    previous.foodGroup = current.foodgroup;
+    previous.foods = randomChoices;
+    return previous;
+  }, {});
 
   // TODO: save the results to ensure the next use has variation
 
   const result = {
     login: user.login,
     servingsPerFoodGroup,
-    foodChoices,
+    foodSelections,
   };
   return result;
 };
