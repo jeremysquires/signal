@@ -87,9 +87,9 @@ We could use SQL to join and transform the data into JSON, but there are already
 
 A user interface is not required but is considered optional for candidates who wish to demonstrate their client side superpowers.
 
-I decided to implement a basic UI using the framework I am most familiar with (Vue).
+I decided to implement a basic UI using the framework I am most familiar with (Vue). In order to quickly develop a skeleton app, I decided to use the Vue CLI to automate a number of tasks.
 
-This UI is very rudimentary, but provides a means of testing the API in an integration setting, rather than just using Dredd, Postman or equivalent.
+The UI is very rudimentary, but provides a means of testing the API in an integration setting, rather than just using Dredd, Postman or equivalent.
 
 ## Submissions
 

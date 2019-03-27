@@ -52,9 +52,9 @@ In the docs folder you will find markdown files in the API blueprint format that
 
 - Refactor users and menu endpoints as decoupled microservices
     - put endpoints into separate route files - DONE
-    - remove dependencies on locals, move to API endpoint calls
-    - allow endpoints to be configured separately during deployment
-- Add state management library so API calls are not necessary where endpoints cohabit a server
+    - remove dependencies on locals, move to API endpoint calls - DONE
+    - allow endpoints to be configured separately during deployment - TODO
+- Add state management so API calls are not necessary where endpoints cohabit a server
 
 #### DevOps
 
@@ -64,6 +64,7 @@ In the docs folder you will find markdown files in the API blueprint format that
 
 #### Security
 
+- Implement white list rules for CORS - DONE
 - Implement HTTPS
 - Use a reverse proxy in a DMZ
 - Add authentication/authorization
@@ -73,6 +74,11 @@ In the docs folder you will find markdown files in the API blueprint format that
 #### Code Quality
 
 - [stricter eslint config](https://www.npmjs.com/package/eslint-config-node)
+
+#### Docs
+
+- Generate API Blueprint HTML output and publish to Apiary
+- Add JSDoc comments to code
 
 ## Front End
 
@@ -102,15 +108,11 @@ In the docs folder you will find markdown files in the API blueprint format that
 
 #### Router
 
-- Installation using CLI: `vue add router`
-    - NOTE: do not execute this once App.js or router.js has been edited, it overwrites
 - Force login/account creation if user is not in vuex store using route guards
     - [vue router guards](https://router.vuejs.org/guide/advanced/navigation-guards.html#per-route-guard)
 
 #### Vuex State
 
-- Installation using CLI: `vue add vuex`
-    - NOTE: do not execute this once store.js has been edited, it overwrites
 - Add user account state to vuex to allow reactivity following user account changes
 - [vuex](https://vuex.vuejs.org/guide/)
 - [vue cli vuex plugin](https://github.com/64robots/vue-cli-plugin-64robots-vuex)
