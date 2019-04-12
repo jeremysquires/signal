@@ -3,7 +3,6 @@ const app = require('./app');
 const { find } = require('lodash');
 const fs = require('fs-extra');
 const path = require('path');
-const { beforeAll, describe, it, expect } = require('jest'); // eslint-disable-line node/no-unpublished-require
 
 const server = supertest(app.callback());
 
