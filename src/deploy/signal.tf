@@ -6,6 +6,22 @@ resource "aws_instance" "signal" {
   ami = "ami-0a313d6098716f372"
   instance_type = "t2.micro"
   key_name = "deployer-key"
+
+  # Copies scripts
+  provisioner "file" {
+    source      = "scripts"
+    destination = "~"
+  }
+
+  # Executes scripts
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x ~/scripts/*.sh",
+      "~/scripts/packages.sh",
+      "~/scripts/signal_install.sh",
+      "~/scripts/signal_run.sh",
+    ]
+  }
 }
 
 resource "aws_security_group_rule" "allow_ssh" {
@@ -38,4 +54,6 @@ resource "aws_key_pair" "deployer" {
 output "ip" {
   value = "${aws_eip.ip.public_ip}"
 }
+
+
 
