@@ -1,4 +1,3 @@
-const { describe, it, expect } = require('jest'); // eslint-disable-line node/no-unpublished-require
 const { paramTruth } = require('../helpers/utils');
 
 describe('paramTruth', () => {
