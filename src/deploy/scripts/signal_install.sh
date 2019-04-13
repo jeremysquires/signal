@@ -1,4 +1,5 @@
 git clone -q https://github.com/jeremysquires/signal.git
+git checkout deploy
 cd signal
 
 cd src/api
