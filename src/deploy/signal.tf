@@ -17,6 +17,16 @@ resource "aws_instance" "signal" {
     }
   }
 
+  # Copies vimrc
+  provisioner "file" {
+    source      = "scripts/.vimrc"
+    destination = "/home/ubuntu"
+    connection {
+      type     = "ssh"
+      user     = "ubuntu"
+    }
+  }
+
   # Executes scripts
   provisioner "remote-exec" {
     inline = [
