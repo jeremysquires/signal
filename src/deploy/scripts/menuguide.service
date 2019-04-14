@@ -1,0 +1,12 @@
+[Unit]
+Description=Menuguide server
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/signal/src/menuguide
+ExecStart=/usr/bin/node /usr/bin/serve -s /home/ubuntu/signal/src/menuguide/dist
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+

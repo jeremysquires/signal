@@ -11,5 +11,7 @@ cd ../menuguide
 npm install
 sudo npm install -g @vue/cli
 sudo npm install -g @vue/cli-service-global
+sudo npm install -g serve
+npm run build
 
 cd ~

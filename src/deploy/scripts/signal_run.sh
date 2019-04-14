@@ -1,14 +1,13 @@
-cd ~/signal/src/api
+cd /home/ubuntu/signal/src/api
 npm run serve &
-disown
 
-cd ~/signal/src/menuguide
+cd /home/ubuntu/signal/src/menuguide
+
 # development: run serve uses CLI webpack devServer
 npm run serve &
-disown
-# production: run SPA under Node serve or nginx
-# npm install -g serve
-# serve -s dist
 
-cd ~
+# production: run SPA under Node serve or nginx
+# serve -s dist &
+
+cd /home/ubuntu
 
