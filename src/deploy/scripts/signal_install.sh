@@ -1,6 +1,6 @@
 git clone -q https://github.com/jeremysquires/signal.git
-git checkout deploy
 cd signal
+git checkout deploy
 
 cd src/api
 npm install

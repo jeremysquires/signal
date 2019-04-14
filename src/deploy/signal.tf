@@ -20,7 +20,7 @@ resource "aws_instance" "signal" {
   # Copies vimrc
   provisioner "file" {
     source      = "scripts/.vimrc"
-    destination = "/home/ubuntu"
+    destination = "/home/ubuntu/.vimrc"
     connection {
       type     = "ssh"
       user     = "ubuntu"
@@ -33,6 +33,7 @@ resource "aws_instance" "signal" {
       "chmod +x /home/ubuntu/scripts/*.sh",
       "bash --login /home/ubuntu/scripts/packages.sh",
       "bash --login /home/ubuntu/scripts/signal_install.sh",
+      "bash --login /home/ubuntu/scripts/signal_run.sh",
     ]
     connection {
       type     = "ssh"

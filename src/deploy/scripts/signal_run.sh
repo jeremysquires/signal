@@ -1,7 +1,7 @@
-cd signal/src/api
+cd ~/signal/src/api
 npm run serve &
 
-cd ../menuguide
+cd ~/signal/src/menuguide
 # development: run serve uses CLI webpack devServer
 npm run serve &
 # production: run SPA under Node serve or nginx
