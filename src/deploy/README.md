@@ -22,10 +22,12 @@ a web server machine, deploy the signal apps and start them up.
 > `terraform apply`
 >
 
-Once everything is running, open the app in a browser at the URL indicated by
-the serve command: http://<ip_address>:8081
+This process will write out the new instance's ip and host.
 
-Once done, you can also log in via the command: `ssh ubuntu@<ip_address>`
+Once everything is running, open the app in a browser at the URL indicated by
+the serve command: http://<host>:5000
+
+Once done, you can also log in via the command: `ssh ubuntu@<host>`
 
 ## Security
 
