@@ -41,13 +41,15 @@ resource "aws_instance" "signal" {
   }
 
   # Copies service startup files
-  provisioner "file" {
-    source      = "scripts/menuguide.service"
-    destination = "/etc/systemd/system/menuguide.service"
-  }
-  provisioner "file" {
-    source      = "scripts/menuapi.service"
-    destination = "/etc/systemd/system/menuapi.service"
+  provisioner "remote-exec" {
+    inline = [
+      "sudo cp -f scripts/menuguide.service /etc/systemd/system/menuguide.service",
+      "sudo cp -f scripts/menuapi.service /etc/systemd/system/menuapi.service",
+    ]
+    connection {
+      type     = "ssh"
+      user     = "ubuntu"
+    }
   }
 
   # Executes service setup and start
@@ -72,5 +74,9 @@ resource "aws_eip" "ip" {
 
 output "ip" {
   value = "${aws_eip.ip.public_ip}"
+}
+
+output "host" {
+  value = "${aws_eip.ip.public_dns}"
 }
 
