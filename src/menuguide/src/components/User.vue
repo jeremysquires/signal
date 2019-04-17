@@ -1,28 +1,28 @@
 <template>
-  <div class="user">
+  <div class="userpage">
     <NavBar heading="User Menu Choices" />
-    <div v-if="user">
-      <ul>
-        <li v-for="(value, key) in user" :key="key">
+    <div class="user" v-if="user">
+      <div class="vitalstats">
+        <div class="characteristic" v-for="(value, key) in user" :key="key">
           {{ key }}: {{ value }}
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
     <div v-else>
-      <ul>
-        <li v-for="chooseUser in users" :key="chooseUser.login">
-          <div>
+      <div>
+        <div class="user" v-for="chooseUser in users" :key="chooseUser.login">
+          <div class="userlink">
             <!-- TODO: add link to menu/login -->
             <router-link :to="`/menu/${chooseUser.login}`">{{ chooseUser.login }}</router-link>
           </div>
-          <ul>
-            <li v-for="(value, key) in chooseUser" :key="key">
+          <div class="vitalstats">
+            <div class="characteristic" v-for="(value, key) in chooseUser" :key="key">
               <!-- TODO: add components for value objects like weight, height, etc. -->
               {{ key }}: {{ value }}
-            </li>
-          </ul>
-        </li>
-      </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -63,12 +63,26 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
-ul {
+.user {
+  padding-top: 5;
+  padding: 0;
+  display: block;
+  margin-left: 0px;
+  margin-top: 10px;
+}
+.userlink {
+  list-style-type: none;
+  padding: 0;
+  display: block;
+  margin-left: 0px;
+  float: left;
+}
+.vitalstats {
   list-style-type: none;
   padding: 0;
   margin-left: 30px;
 }
-li {
+.characteristic {
   display: block;
   margin: 0 40px;
   text-align: start;
