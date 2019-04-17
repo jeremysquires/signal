@@ -1,25 +1,16 @@
 <template>
   <div class="userpage">
-    <NavBar heading="User Menu Choices" />
-    <div class="user" v-if="user">
-      <div class="vitalstats">
-        <div class="characteristic" v-for="(value, key) in user" :key="key">
-          {{ key }}: {{ value }}
+    <NavBar heading="User Vital Statistics" />
+    <div class="userlist">
+      <div class="user" v-for="chooseUser in users" :key="chooseUser.login">
+        <div class="userlink">
+          <!-- TODO: add link to menu/login -->
+          <router-link :to="`/menu/${chooseUser.login}`">{{ chooseUser.login }}</router-link>
         </div>
-      </div>
-    </div>
-    <div v-else>
-      <div>
-        <div class="user" v-for="chooseUser in users" :key="chooseUser.login">
-          <div class="userlink">
-            <!-- TODO: add link to menu/login -->
-            <router-link :to="`/menu/${chooseUser.login}`">{{ chooseUser.login }}</router-link>
-          </div>
-          <div class="vitalstats">
-            <div class="characteristic" v-for="(value, key) in chooseUser" :key="key">
-              <!-- TODO: add components for value objects like weight, height, etc. -->
-              {{ key }}: {{ value }}
-            </div>
+        <div class="vitalstats">
+          <div class="characteristic" v-for="(value, key) in chooseUser" :key="key">
+            <!-- TODO: add components for value objects like weight, height, etc. -->
+            <span class="key">{{ key }}</span><span class="value">{{ value }}</span>
           </div>
         </div>
       </div>
@@ -63,29 +54,34 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
+.userpage {
+  display: flex;
+  flex-direction: column;
+}
+.userlist {
+  display: flex;
+  flex-wrap: wrap;
+  border: #aaa;
+}
 .user {
-  padding-top: 5;
-  padding: 0;
-  display: block;
-  margin-left: 0px;
-  margin-top: 10px;
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 25%;
 }
 .userlink {
-  list-style-type: none;
-  padding: 0;
-  display: block;
-  margin-left: 0px;
-  float: left;
+  margin-left: 10px;
 }
 .vitalstats {
-  list-style-type: none;
-  padding: 0;
-  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
 }
 .characteristic {
-  display: block;
-  margin: 0 40px;
-  text-align: start;
+  display: flex;
+  justify-content: space-between;
+}
+.key {
+  font-weight: bold;
 }
 a {
   color: #42b983;
