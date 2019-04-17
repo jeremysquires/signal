@@ -10,7 +10,8 @@
         <div class="vitalstats">
           <div class="characteristic" v-for="(value, key) in chooseUser" :key="key">
             <!-- TODO: add components for value objects like weight, height, etc. -->
-            <span class="key">{{ key }}</span><span class="value">{{ value }}</span>
+            <span class="key">{{ key }}:</span>
+            <span class="value">{{ outputCharacteristic(value) }}</span>
           </div>
         </div>
       </div>
@@ -32,6 +33,13 @@ export default {
     ...mapActions([
       'setUsers',
     ]),
+    outputCharacteristic(value) {
+      if (value.value) {
+        return `${value.value} ${value.units} (${value.dataSource})`;
+      } else {
+        return value;
+      }
+    },
   },
   computed: {
     ...mapState([
