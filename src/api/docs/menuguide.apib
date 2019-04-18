@@ -160,7 +160,7 @@ Gets a family's daily menu.
 ## Servings (object)
 + foodGroup (string, required)
 + servings (string, required)
-+ statements (array[string], required)
++ statements (array[string], required, fixed-type)
 + maxServings (number, required)
 
 ## Food (object)
@@ -171,9 +171,9 @@ Gets a family's daily menu.
 
 ## FoodsByFoodGroup (object)
 + foodGroup (string, required)
-+ foods (array[Food], required)
++ foods (array[Food], required, fixed-type)
 
 ## Menu (object)
 + login (string, required)
-+ servingsPerFoodGroup (array[Servings], required)
-+ foodSelections (array[FoodsByFoodGroup], required)
++ servingsPerFoodGroup (array[Servings], required, fixed-type)
++ foodSelections (array[FoodsByFoodGroup], required, fixed-type)

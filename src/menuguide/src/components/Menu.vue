@@ -1,9 +1,10 @@
 <template>
   <div class="menu">
-    <NavBar heading="Menu Page" />
+    <NavBar heading="Menus" />
     <div>
       <div v-if="user">
-        <h4>Menu for {{ user.firstName }} {{ user.lastName }}</h4>
+        <h4>Menu for {{ user.firstName }} {{ user.lastName }}
+          <span v-if="user.middleNameOrInitial">, {{ user.middleNameOrInitial }}</span></h4>
         <MenuIndividual :login="user.login"/>
       </div>
       <div v-if="hasFamily">
@@ -22,17 +23,19 @@
 <script>
 import NavBar from '@/components/NavBar.vue';
 import MenuIndividual from '@/components/MenuIndividual.vue';
-import { mapState } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
+import { find } from 'lodash';
+import store from '@/store'
 
 export default {
   name: 'Menu',
-  props: {
-    login: String,
-  },
   computed: {
     ...mapState([
       'users',
       'user',
+    ]),
+    ...mapMutations([
+      'setUser',
     ]),
     hasFamily() {
       return this.user.family && this.user.family.length > 0;
@@ -42,22 +45,27 @@ export default {
     NavBar,
     MenuIndividual,
   },
+  beforeRouteUpdate(to, from, next) {
+    // NOTE: mapMutations are not available at this stage
+    if (!store.state.user || (!to.params.login === !store.state.user.login)) {
+      // get user from users, if it exists, or route to users
+      const newUser = find(store.state.users, { 'login': to.params.login });
+      if (!newUser) {
+        next('/users');
+      } else {
+        store.commit('setUser', newUser);
+      }
+    }
+    next();
+  },
 };
 </script>
 
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
 a {
   color: #42b983;
+}
+h4, h5 {
+  margin-top: 20px;
 }
 </style>

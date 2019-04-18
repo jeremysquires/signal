@@ -19,6 +19,8 @@ The details of the API endpoints are documented in API Blueprint format in [docs
 >
 > `npm install -g dredd`
 >
+> `npm install -g drakov`
+>
 > `npm install`
 
 #### Run
@@ -32,3 +34,11 @@ The details of the API endpoints are documented in API Blueprint format in [docs
 > `cd src/api`
 >
 > `npm run test`
+
+#### Run Mock Server
+
+> `cd src/api`
+>
+> `npm run mock`
+
+

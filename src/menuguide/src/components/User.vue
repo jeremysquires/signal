@@ -1,46 +1,58 @@
 <template>
-  <div class="user">
-    <NavBar heading="User Menu Choices" />
-    <div v-if="user">
-      <ul>
-        <li v-for="(value, key) in user" :key="key">
-          {{ key }}: {{ value }}
-        </li>
-      </ul>
-    </div>
-    <div v-else>
-      <ul>
-        <li v-for="chooseUser in users" :key="chooseUser.login">
-          <div>
-            <!-- TODO: add link to menu/login -->
-            <router-link :to="`/menu/${chooseUser.login}`">{{ chooseUser.login }}</router-link>
+  <div class="userpage">
+    <NavBar heading="User Vital Statistics" />
+
+    <div class="userlist">
+      <div class="user" v-for="chooseUser in users" :key="chooseUser.login">
+        <div class="userlink">
+          <router-link :to="`/menu/${chooseUser.login}`">{{ chooseUser.login }}</router-link>
+        </div>
+        <div class="vitalstats">
+          <div class="characteristic" v-for="(value, key) in chooseUser" :key="key">
+            <span class="key">{{ characteristicKey(key) }}:</span>
+            <span class="value">{{ characteristicValue(value, key) }}</span>
           </div>
-          <ul>
-            <li v-for="(value, key) in chooseUser" :key="key">
-              <!-- TODO: add components for value objects like weight, height, etc. -->
-              {{ key }}: {{ value }}
-            </li>
-          </ul>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar.vue';
-import { mapMutations, mapState, mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   name: 'User',
   methods: {
-    ...mapMutations([
-      'setLogin',
-      'setUser',
-    ]),
     ...mapActions([
       'setUsers',
     ]),
+    // TODO: move these transformations to a characteristic component
+    characteristicKey(key) {
+      return key
+        .replace(/[A-Z]/g, function(letter) {
+          return ` ${letter}`;
+        })
+        .replace(/^[a-z]/, function(letter) {
+          return `${letter.toUpperCase()}`;
+        });
+    },
+    characteristicValue(value, key) {
+      // TODO: move this to utils 
+      const genderMap = {
+        f: 'Female',
+        m: 'Male',
+        n: 'Non-Binary'
+      }
+      if (value.value) {
+        return `${value.value} ${value.units} (${value.dataSource})`;
+      } else if (key === 'gender') {
+        return genderMap[value];
+      } else {
+        return value;
+      }
+    },
   },
   computed: {
     ...mapState([
@@ -58,22 +70,51 @@ export default {
 }
 </script>
 
-<!-- TODO: add styling to make this more attractive -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin-left: 30px;
-}
-li {
-  display: block;
-  margin: 0 40px;
-  text-align: start;
-}
+<style scoped lang="scss">
 a {
   color: #42b983;
+}
+.userpage {
+  display: flex;
+  flex-direction: column;
+
+  .userlist {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+
+    .user {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 0;
+      flex-basis: 20%;
+      border: 1px solid #aaa;
+      margin: 5px;
+
+      .userlink {
+        margin-left: 10px;
+      }
+
+      .vitalstats {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+
+        .characteristic {
+          display: flex;
+          justify-content: space-between;
+
+          .key {
+            font-weight: bold;
+            text-align: left;
+          }
+
+          .value {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
 }
 </style>
