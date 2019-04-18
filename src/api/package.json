@@ -11,7 +11,8 @@
     "test": "jest && npm run test:dredd",
     "test:dredd": "dredd --config docs/dredd_menuguide_local.yml",
     "data:convert": "node ./scripts/data-convert.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "mock": "drakov -f docs/menuguide.apib"
   },
   "author": "Jeremy Squires",
   "license": "ISC",

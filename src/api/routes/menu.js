@@ -159,7 +159,7 @@ const getMenu = (user) => {
   const statementsJoined = innerJoin(servingsJoined, statementsMapped, "fgid", "fgid");
   const servingsPerFoodGroup = statementsJoined.map((obj) => {
     return {
-      foodgroup: obj.foodgroup,
+      foodGroup: obj.foodgroup,
       servings: obj.servings,
       statements: obj.statements,
       maxServings: maxServings(obj.servings)
@@ -169,11 +169,11 @@ const getMenu = (user) => {
   // create a list of food choices to potentially include in the menu
   const foodSelections = servingsPerFoodGroup.reduce((previous, current) => {
     // flatten the food categories into a blended array
-    const foodsArray = jmespath.search(foodChoices[current.foodgroup], '*[][]');
+    const foodsArray = jmespath.search(foodChoices[current.foodGroup], '*[][]');
     // limit the number of food choices, making the choices randomly
     const randomChoices = sampleSize(foodsArray, current.maxServings);
     previous.push({
-      foodGroup: current.foodgroup,
+      foodGroup: current.foodGroup,
       foods: randomChoices,
     });
     return previous;
