@@ -65,6 +65,9 @@ export default new Vuex.Store({
     setUsers(state, newUsers) {
       state.users = newUsers;
     },
+    setApiBaseUrl(state, newApiBaseUrl) {
+      state.apiBaseUrl = newApiBaseUrl;
+    },
   },
   actions: {
     async setUsers(context) {

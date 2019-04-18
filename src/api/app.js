@@ -16,9 +16,14 @@ app.use(error(err => ({
 
 app.use(bodyParser());
 app.use(cors({
-  // allow requests from local microservices
-  // TODO: make this a function of ctx to white/blacklist via rules
-  origin: 'http://localhost:8081',
+  // allow requests from services, white/blacklisted via origin rules
+  origin: (request) => {
+    const origin = request.header.origin || request.header.host;
+    if (origin.match(/localhost(:\d+)?$|\.amazonaws\.com(:\d+)?$/)) {
+      return '*';
+    }
+    return false;
+  },
 }));
 
 app.use(router.routes()).use(router.allowedMethods());

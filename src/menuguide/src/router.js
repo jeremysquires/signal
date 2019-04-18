@@ -90,4 +90,12 @@ const router = new Router({
   ],
 });
 
+// set the global API Base URL
+router.beforeEach((to, from, next) => {
+  const origin = window.location.origin || `${window.location.protocol}/${window.location.host}`;
+  const apiBaseUrl = origin.match(/:\d+/) ? origin.replace(/:\d+/, ':8282') : `${origin}:8282`;
+  store.commit('setApiBaseUrl', `${apiBaseUrl}/api/v1`);
+  next();
+});
+
 export default router;

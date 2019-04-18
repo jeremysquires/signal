@@ -1,0 +1,13 @@
+[Unit]
+Description=Menuguide API server
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/signal/src/api
+ExecStart=/usr/bin/node /home/ubuntu/signal/src/api/server.js
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+
+
