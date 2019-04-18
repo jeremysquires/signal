@@ -1,19 +1,44 @@
 <template>
   <div class="menuindividual">
-    <div v-if="menu">
-      <!-- TODO: format output data in a more pleasing way -->
-      <h6>Servings Per Food Group</h6>
-      <ul>
-        <li v-for="(value, key) in menu.servingsPerFoodGroup" :key="key">
-          {{ key }}: {{ value }}
-        </li>
-      </ul>
-      <h6>Suggested Food Choices for Menu</h6>
-      <ul>
-        <li v-for="(value, key) in menu.foodSelections" :key="key">
-          {{ key }}: {{ value }}
-        </li>
-      </ul>
+    <div class="menu" v-if="menu">
+      <b-table
+        caption-top
+        bordered
+        striped
+        :items="menu.servingsPerFoodGroup"
+        :fields="menu.servingsPerFoodGroupFields"
+      >
+        <template slot="table-caption">Servings Per Food Group</template>
+
+        <template slot="statements" slot-scope="foodGroup">
+          <ul>
+            <li v-for="(statement,index) in foodGroup.value" :key="index">
+              {{ statement }}
+            </li>
+          </ul>
+        </template>
+      </b-table>
+
+      <b-table
+        class="table"
+        caption-top
+        bordered
+        :items="menu.foodSelections"
+        :fields="menu.foodSelectionsFields"
+        tbody-tr-class="foods-row"
+      >
+        <template slot="table-caption">Suggested Food Choices for Menu</template>
+
+        <template slot="foods" slot-scope="foodGroup">
+          <b-table
+            class="foods-table-td-table"
+            striped
+            :items="foodGroup.value"
+            :fields="menu.foodsFields"
+          >
+          </b-table>
+        </template>
+      </b-table>
     </div>
   </div>
 </template>
@@ -35,6 +60,49 @@ export default {
   async created() {
     const menuData = await this.loadMenuData(this.apiBaseUrl, this.login);
     this.menu = menuData;
+    // fields defs for menu.servingsPerFoodGroup
+    this.menu.servingsPerFoodGroupFields = [
+      {
+        key: 'foodGroup',
+        sortable: true,
+      },
+      {
+        key: 'servings',
+        sortable: true,
+      },
+      {
+        key: 'statements',
+      },
+      {
+        key: 'maxServings',
+        sortable: true,
+      },
+    ];
+    // fields defs for menu.foodSelections
+    this.menu.foodSelectionsFields = [
+      {
+        key: 'foodGroup',
+        sortable: true,
+      },
+      {
+        key: 'foods',
+      },
+    ];
+    // fields defs for menu.foodSelections.foods
+    this.menu.foodsFields = [
+      {
+        key: 'food',
+        sortable: true,
+      },
+      {
+        key: 'servingSize',
+        sortable: true,
+      },
+      {
+        key: 'foodCategory',
+        sortable: true,
+      },
+    ];
   },
   computed: {
     ...mapState([
@@ -62,7 +130,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+.table {
+  align-self: center;
+}
+.foods-row > td {
+  padding: 0;
+}
+.foods-table-td-table {
+  border: 0;
+  margin: 0;
+}
 h3 {
   margin: 40px 0 0;
 }

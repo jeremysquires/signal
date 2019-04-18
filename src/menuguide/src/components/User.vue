@@ -4,14 +4,12 @@
     <div class="userlist">
       <div class="user" v-for="chooseUser in users" :key="chooseUser.login">
         <div class="userlink">
-          <!-- TODO: add link to menu/login -->
           <router-link :to="`/menu/${chooseUser.login}`">{{ chooseUser.login }}</router-link>
         </div>
         <div class="vitalstats">
           <div class="characteristic" v-for="(value, key) in chooseUser" :key="key">
-            <!-- TODO: add components for value objects like weight, height, etc. -->
-            <span class="key">{{ key }}:</span>
-            <span class="value">{{ outputCharacteristic(value) }}</span>
+            <span class="key">{{ characteristicKey(key) }}:</span>
+            <span class="value">{{ characteristicValue(value, key) }}</span>
           </div>
         </div>
       </div>
@@ -33,9 +31,27 @@ export default {
     ...mapActions([
       'setUsers',
     ]),
-    outputCharacteristic(value) {
+    // TODO: move these transformations to a characteristic component
+    characteristicKey(key) {
+      return key
+        .replace(/[A-Z]/g, function(letter) {
+          return ` ${letter}`;
+        })
+        .replace(/^[a-z]/, function(letter) {
+          return `${letter.toUpperCase()}`;
+        });
+    },
+    characteristicValue(value, key) {
+      // TODO: move this to utils 
+      const genderMap = {
+        f: 'Female',
+        m: 'Male',
+        n: 'Non-Binary'
+      }
       if (value.value) {
         return `${value.value} ${value.units} (${value.dataSource})`;
+      } else if (key === 'gender') {
+        return genderMap[value];
       } else {
         return value;
       }
@@ -90,6 +106,10 @@ h3 {
 }
 .key {
   font-weight: bold;
+  text-align: left;
+}
+.value {
+  text-align: right;
 }
 a {
   color: #42b983;

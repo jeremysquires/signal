@@ -45,7 +45,7 @@ export default {
 }
 .title {
   font-family: 'Palanquin Dark', sans-serif;
-  font-size: 20px;
+  font-size: 28px;
   align-self:center;
 }
 h3 {
