@@ -7,7 +7,7 @@
         bordered
         striped
         :items="menu.servingsPerFoodGroup"
-        :fields="menu.servingsPerFoodGroupFields"
+        :fields="servingsPerFoodGroupFields"
       >
         <template slot="table-caption">Servings Per Food Group</template>
 
@@ -25,17 +25,17 @@
         caption-top
         bordered
         :items="menu.foodSelections"
-        :fields="menu.foodSelectionsFields"
+        :fields="foodSelectionsFields"
         tbody-tr-class="foods-row"
       >
-        <template slot="table-caption">Suggested Food Choices for Menu</template>
+        <template slot="table-caption">Suggested Food Choices</template>
 
         <template slot="foods" slot-scope="foodGroup">
           <b-table
             class="foods-table-td-table"
             striped
             :items="foodGroup.value"
-            :fields="menu.foodsFields"
+            :fields="foodsFields"
             tbody-tr-class="foods-table-td-table-row"
           >
           </b-table>
@@ -53,63 +53,66 @@ export default {
   name: 'MenuIndividual',
   data() {
     return {
-      menu: {}
+      menu: {},
+      servingsPerFoodGroupFields: [
+        {
+          key: 'foodGroup',
+          sortable: true,
+        },
+        {
+          key: 'servings',
+          sortable: true,
+        },
+        {
+          key: 'statements',
+        },
+        {
+          key: 'maxServings',
+          sortable: true,
+        },
+      ],
+      foodSelectionsFields: [
+        {
+          key: 'foodGroup',
+          sortable: true,
+        },
+        {
+          key: 'foods',
+        },
+      ],
+      foodsFields: [
+        {
+          key: 'food',
+          sortable: true,
+        },
+        {
+          key: 'servingSize',
+          sortable: true,
+        },
+        {
+          key: 'foodCategory',
+          sortable: true,
+        },
+      ],
     }
   },
   props: {
     login: String,
   },
   async created() {
-    const menuData = await this.loadMenuData(this.apiBaseUrl, this.login);
-    this.menu = menuData;
-    // fields defs for menu.servingsPerFoodGroup
-    this.menu.servingsPerFoodGroupFields = [
-      {
-        key: 'foodGroup',
-        sortable: true,
-      },
-      {
-        key: 'servings',
-        sortable: true,
-      },
-      {
-        key: 'statements',
-      },
-      {
-        key: 'maxServings',
-        sortable: true,
-      },
-    ];
-    // fields defs for menu.foodSelections
-    this.menu.foodSelectionsFields = [
-      {
-        key: 'foodGroup',
-        sortable: true,
-      },
-      {
-        key: 'foods',
-      },
-    ];
-    // fields defs for menu.foodSelections.foods
-    this.menu.foodsFields = [
-      {
-        key: 'food',
-        sortable: true,
-      },
-      {
-        key: 'servingSize',
-        sortable: true,
-      },
-      {
-        key: 'foodCategory',
-        sortable: true,
-      },
-    ];
+    this.menu = await this.loadMenuData(this.apiBaseUrl, this.login);
   },
   computed: {
     ...mapState([
       'apiBaseUrl',
     ]),
+  },
+  watch: {
+    async login(newLogin, oldLogin) {
+      if (oldLogin !== newLogin) {
+        this.menu = await this.loadMenuData(this.apiBaseUrl, newLogin);
+      }
+    }
   },
   methods: {
     loadMenuData: async (baseurl, login) => {

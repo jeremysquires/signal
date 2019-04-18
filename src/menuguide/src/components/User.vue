@@ -1,6 +1,7 @@
 <template>
   <div class="userpage">
     <NavBar heading="User Vital Statistics" />
+
     <div class="userlist">
       <div class="user" v-for="chooseUser in users" :key="chooseUser.login">
         <div class="userlink">
@@ -19,15 +20,11 @@
 
 <script>
 import NavBar from '@/components/NavBar.vue';
-import { mapMutations, mapState, mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   name: 'User',
   methods: {
-    ...mapMutations([
-      'setLogin',
-      'setUser',
-    ]),
     ...mapActions([
       'setUsers',
     ]),
