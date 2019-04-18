@@ -132,52 +132,64 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+a {
+  color: #42b983;
+}
 .menu {
   display: flex;
   flex-direction: column;
-}
-.menu-table {
-  align-self: center;
-  width: 80%;
-}
-.menu-table td:nth-child(1) {
-  text-align: left;
-}
-ul.statement-list {
-  list-style-type: circle;
-  margin: 0;
-  padding: 0;
-}
-li.statement {
-  text-align: start;
-  margin: 10px;
-  padding: 0;
-}
-.foods-row > td:nth-child(1) {
-  text-align: left;
-}
-.foods-row > td:nth-child(2) {
-  padding: 0;
-}
-.foods-table-td-table {
-  border: 0;
-  margin: 0;
-}
-.foods-table-td-table-row > td:nth-child(1) {
-  width: 40%;
-  text-align: left;
-}
-.foods-table-td-table-row > td:nth-child(2) {
-  width: 20%;
-}
-.foods-table-td-table-row > td:nth-child(3) {
-  width: 40%;
-}
-h3 {
-  margin: 40px 0 0;
-}
-a {
-  color: #42b983;
+
+  .menu-table {
+    align-self: center;
+    width: 80%;
+
+    td:nth-child(1) {
+      text-align: left;
+    }
+
+    ul.statement-list {
+      list-style-type: circle;
+      margin: 0;
+      padding: 0;
+
+      li.statement {
+        text-align: start;
+        margin: 10px;
+        padding: 0;
+      }
+    }
+
+    .foods-row {
+      > td:nth-child(1) {
+        text-align: left;
+      }
+
+      > td:nth-child(2) {
+        padding: 0;
+      }
+
+      .foods-table-td-table {
+        border: 0;
+        margin: 0;
+
+        .foods-table-td-table-row {
+          > td:nth-child(1) {
+            width: 40%;
+            text-align: left;
+          }
+
+          > td:nth-child(2) {
+            width: 20%;
+          }
+
+          > td:nth-child(3) {
+            width: 40%;
+          }
+        }
+      }
+
+    }
+  }
 }
 </style>

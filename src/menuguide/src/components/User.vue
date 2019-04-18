@@ -73,48 +73,51 @@ export default {
 }
 </script>
 
-<!-- TODO: add styling to make this more attractive -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
+<style scoped lang="scss">
+a {
+  color: #42b983;
 }
 .userpage {
   display: flex;
   flex-direction: column;
-}
-.userlist {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 5px;
-}
-.user {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 0;
-  flex-basis: 20%;
-  border: 1px solid #aaa;
-  margin: 5px;
-}
-.userlink {
-  margin-left: 10px;
-}
-.vitalstats {
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-}
-.characteristic {
-  display: flex;
-  justify-content: space-between;
-}
-.key {
-  font-weight: bold;
-  text-align: left;
-}
-.value {
-  text-align: right;
-}
-a {
-  color: #42b983;
+
+  .userlist {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+
+    .user {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 0;
+      flex-basis: 20%;
+      border: 1px solid #aaa;
+      margin: 5px;
+
+      .userlink {
+        margin-left: 10px;
+      }
+
+      .vitalstats {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+
+        .characteristic {
+          display: flex;
+          justify-content: space-between;
+
+          .key {
+            font-weight: bold;
+            text-align: left;
+          }
+
+          .value {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
 }
 </style>
