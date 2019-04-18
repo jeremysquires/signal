@@ -85,12 +85,15 @@ h3 {
 .userlist {
   display: flex;
   flex-wrap: wrap;
-  border: #aaa;
+  padding: 5px;
 }
 .user {
   display: flex;
-  flex-grow: 1;
-  flex-basis: 25%;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-basis: 20%;
+  border: 1px solid #aaa;
+  margin: 5px;
 }
 .userlink {
   margin-left: 10px;

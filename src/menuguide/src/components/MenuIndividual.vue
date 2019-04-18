@@ -2,6 +2,7 @@
   <div class="menuindividual">
     <div class="menu" v-if="menu">
       <b-table
+        class="menu-table"
         caption-top
         bordered
         striped
@@ -11,8 +12,8 @@
         <template slot="table-caption">Servings Per Food Group</template>
 
         <template slot="statements" slot-scope="foodGroup">
-          <ul>
-            <li v-for="(statement,index) in foodGroup.value" :key="index">
+          <ul class="statement-list">
+            <li class="statement" v-for="(statement,index) in foodGroup.value" :key="index">
               {{ statement }}
             </li>
           </ul>
@@ -20,7 +21,7 @@
       </b-table>
 
       <b-table
-        class="table"
+        class="menu-table"
         caption-top
         bordered
         :items="menu.foodSelections"
@@ -35,6 +36,7 @@
             striped
             :items="foodGroup.value"
             :fields="menu.foodsFields"
+            tbody-tr-class="foods-table-td-table-row"
           >
           </b-table>
         </template>
@@ -135,28 +137,45 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.table {
+.menu-table {
   align-self: center;
+  width: 80%;
 }
-.foods-row > td {
+.menu-table td:nth-child(1) {
+  text-align: left;
+}
+ul.statement-list {
+  list-style-type: circle;
+  margin: 0;
+  padding: 0;
+}
+li.statement {
+  text-align: start;
+  margin: 10px;
+  padding: 0;
+}
+.foods-row > td:nth-child(1) {
+  text-align: left;
+}
+.foods-row > td:nth-child(2) {
   padding: 0;
 }
 .foods-table-td-table {
   border: 0;
   margin: 0;
 }
+.foods-table-td-table-row > td:nth-child(1) {
+  width: 40%;
+  text-align: left;
+}
+.foods-table-td-table-row > td:nth-child(2) {
+  width: 20%;
+}
+.foods-table-td-table-row > td:nth-child(3) {
+  width: 40%;
+}
 h3 {
   margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin-left: 30px;
-}
-li {
-  display: block;
-  margin: 0 40px;
-  text-align: start;
 }
 a {
   color: #42b983;

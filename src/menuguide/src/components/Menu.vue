@@ -1,6 +1,6 @@
 <template>
   <div class="menu">
-    <NavBar heading="Menu Page" />
+    <NavBar heading="Menus" />
     <div>
       <div v-if="user">
         <h4>Menu for {{ user.firstName }} {{ user.lastName }}</h4>
