@@ -1,7 +1,6 @@
 dry-run: null
 hookfiles: null
 language: nodejs
-sandbox: false
 server: node ./server.js
 server-wait: 10
 init: false
@@ -18,8 +17,6 @@ details: false
 method: []
 color: true
 logLevel: warning
-timestamp: false
-silent: false
 path: []
 hooks-worker-timeout: 5000
 hooks-worker-connect-timeout: 1500

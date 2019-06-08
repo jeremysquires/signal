@@ -36,7 +36,6 @@ export default {
   },
   computed: {
     ...mapState([
-      'login',
       'users',
       'user',
     ]),
