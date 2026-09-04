@@ -1,4 +1,4 @@
-## MenuGuide API
+# MenuGuide API
 
 The MenuGuide API provides data for the MenuGuide Front End.
 
@@ -7,13 +7,13 @@ The details of the API endpoints are documented in API Blueprint format in [docs
 - `http://localhost:8282/api/v1/users/:login`
 - `http://localhost:8282/api/v1/menu/:login`
 
-### Quick Start
+## Quick Start
 
-#### Prerequisites
+### Prerequisites
 
-- Node v8.5.0+
+- Node v24.20.0
 
-#### Install NPM modules / scripts
+### Install NPM modules / scripts
 
 > `cd src/api`
 >
@@ -23,22 +23,20 @@ The details of the API endpoints are documented in API Blueprint format in [docs
 >
 > `npm install`
 
-#### Run
+### Run
 
 > `cd src/api`
 >
 > `npm run serve`
 
-#### Test
+### Test
 
 > `cd src/api`
 >
 > `npm run test`
 
-#### Run Mock Server
+### Run Mock Server
 
 > `cd src/api`
 >
 > `npm run mock`
-
-

@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import MenuGuide from './components/MenuGuide';
-import Menu from './components/Menu';
-import User from './components/User';
+import MenuGuide from './components/MenuGuide.vue';
+import Menu from './components/Menu.vue';
+import User from './components/User.vue';
 import store from './store'
 import { find } from 'lodash';
 
@@ -10,7 +10,7 @@ Vue.use(Router);
 
 const router = new Router({
   mode: 'history',
-  base: process.env.BASE_URL,
+  base: import.meta.env.BASE_URL,
   routes: [
     {
       path: '/',
@@ -85,7 +85,7 @@ const router = new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './components/About.vue')
+      component: () => import('./components/About.vue')
     },
   ],
 });
