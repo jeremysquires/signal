@@ -4,7 +4,7 @@
     <h1 class="splash">Welcome to Your Menu Guide</h1>
     <p>
       The
-      <a href="https://food-guide.canada.ca/en/" target="_blank" rel="noopener">Canada Food Guide</a>
+      <a href="https://www.canada.ca/en/health-canada/services/food-guide.html" target="_blank" rel="noopener">Canada Food Guide</a>
       provides essential nutritional and health information.
     </p>
     <p>
@@ -18,9 +18,7 @@
       <a href="https://www.canada.ca/en/health-canada/services/canada-food-guide/tips-healthy-eating/meal-planning-cooking-healthy-choices/recipes.html" target="_blank" rel="noopener">recipes</a>
       check out
       <ul>
-        <li><a href="https://www.canada.ca/en/health-canada/services/canada-food-guide/tips-healthy-eating/meal-planning-cooking-healthy-choices/recipes.html#Breakfast" target="_blank" rel="noopener">Breakfast</a></li>
-        <li><a href="https://www.canada.ca/en/health-canada/services/canada-food-guide/tips-healthy-eating/meal-planning-cooking-healthy-choices/recipes.html#Breakfast" target="_blank" rel="noopener">Lunch/Dinner</a></li>
-        <li><a href="https://www.canada.ca/en/health-canada/services/canada-food-guide/tips-healthy-eating/meal-planning-cooking-healthy-choices/recipes.html#Breakfast" target="_blank" rel="noopener">Snacks</a></li>
+        <li><a href="https://www.canada.ca/en/health-canada/services/canada-food-guide/tips-healthy-eating/meal-planning-cooking-healthy-choices/recipes.html" target="_blank" rel="noopener">Breakfast, Lunch/Dinner, or Snacks</a></li>
       </ul>
     </p>
   </div>
