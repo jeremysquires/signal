@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
-    "test": "npm run test:unit"
+    "serve": "vite preview"
   },
   "dependencies": {
     "@vitejs/plugin-vue2": "^2.3.4",
