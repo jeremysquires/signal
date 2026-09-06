@@ -1,8 +1,8 @@
 import { shallowMount } from '@vue/test-utils';
 import NavBar from '@/components/NavBar.vue';
-import BootstrapVue from 'bootstrap-vue';
+import BootstrapVueNext from 'bootstrap-vue-next';
 import Vue from 'vue';
-Vue.use(BootstrapVue);
+Vue.use(BootstrapVueNext);
 
 describe('NavBar.vue', () => {
   it('renders heading when passed', () => {

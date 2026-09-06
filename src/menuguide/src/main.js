@@ -1,14 +1,14 @@
 import Vue from 'vue';
-import BootstrapVue from 'bootstrap-vue';
+import BootstrapVueNext from 'bootstrap-vue-next';
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
+import 'bootstrap-vue-next/dist/bootstrap-vue-next.css'
 
 import App from './App.vue';
 import store from './store';
 import router from './router';
 
 Vue.config.productionTip = false;
-Vue.use(BootstrapVue);
+Vue.use(BootstrapVueNext);
 
 new Vue({
   store,
